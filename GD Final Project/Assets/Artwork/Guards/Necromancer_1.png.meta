@@ -78,7 +78,7 @@ TextureImporter:
       213: 7785987811928551087
     second: Necromancer_1_24
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -98,6 +98,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -107,8 +109,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -129,9 +131,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -147,6 +154,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -695,6 +714,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Necromancer_1_20: 7769529886017848011
+      Necromancer_1_19: 5219026416643782807
+      Necromancer_1_1: 1050103999765872828
+      Necromancer_1_3: 9187104086732893733
+      Necromancer_1_14: -2238742680821893928
+      Necromancer_1_5: 5510806106318770904
+      Necromancer_1_8: 8334376621310566075
+      Necromancer_1_6: -4379159504701834612
+      Necromancer_1_2: -6973819600299781216
+      Necromancer_1_18: -2198977734229934804
+      Necromancer_1_23: -3331668644537147280
+      Necromancer_1_22: -1091661072971670396
+      Necromancer_1_21: -3437669042821570230
+      Necromancer_1_10: -102614079303118021
+      Necromancer_1_13: 6778929769524228107
+      Necromancer_1_16: 6242802190388017667
+      Necromancer_1_17: 4207042777328194638
+      Necromancer_1_9: -7425826014539653091
+      Necromancer_1_0: 6369861449297053149
+      Necromancer_1_11: 204553442581624367
+      Necromancer_1_7: -4163112930136559711
+      Necromancer_1_4: 4946807277817789399
+      Necromancer_1_12: -5383541324541583697
+      Necromancer_1_24: 7785987811928551087
+      Necromancer_1_15: 2023243916063937189
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

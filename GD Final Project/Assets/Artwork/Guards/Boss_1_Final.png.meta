@@ -195,7 +195,7 @@ TextureImporter:
       213: -4228807337230668099
     second: Boss_1_Final_63
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -215,6 +215,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -224,8 +226,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -246,9 +248,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -264,6 +271,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1631,6 +1650,71 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Boss_1_Final_14: 7787154629896007535
+      Boss_1_Final_4: 5206364207207912473
+      Boss_1_Final_9: -8540845073669562913
+      Boss_1_Final_21: 4240642112499514243
+      Boss_1_Final_22: -6047107009219699601
+      Boss_1_Final_10: -6467018324885097835
+      Boss_1_Final_20: -6858665846311958186
+      Boss_1_Final_46: 7733618995534729139
+      Boss_1_Final_38: 3170536563155417080
+      Boss_1_Final_61: -7519581696787872961
+      Boss_1_Final_8: 5855725988862833408
+      Boss_1_Final_47: 8349187237275670728
+      Boss_1_Final_59: 228258044701485007
+      Boss_1_Final_11: 6456135011290565253
+      Boss_1_Final_56: 12286977423643430
+      Boss_1_Final_16: 7570049940333123979
+      Boss_1_Final_17: -4522467380094119783
+      Boss_1_Final_58: -4445447007948336929
+      Boss_1_Final_41: 823280535725945755
+      Boss_1_Final_42: -8038730119321789774
+      Boss_1_Final_36: -3576561892250871231
+      Boss_1_Final_19: -3195472084049870304
+      Boss_1_Final_35: 3780761550524305391
+      Boss_1_Final_39: -189541233897676828
+      Boss_1_Final_45: 9089041457678309486
+      Boss_1_Final_23: 893928010148130596
+      Boss_1_Final_28: -447763805005026931
+      Boss_1_Final_54: -2713554253133665054
+      Boss_1_Final_37: 3239330690402432411
+      Boss_1_Final_50: 5284967389271720571
+      Boss_1_Final_13: -8202209150769187416
+      Boss_1_Final_3: -6506776386204560251
+      Boss_1_Final_0: 4050534308078542119
+      Boss_1_Final_44: -349786856677228903
+      Boss_1_Final_15: 6985831279785219268
+      Boss_1_Final_7: -4581255444688279159
+      Boss_1_Final_49: 2735087477006762599
+      Boss_1_Final_12: -5647830921351304815
+      Boss_1_Final_48: 8534815251859103341
+      Boss_1_Final_2: 4182127765510516596
+      Boss_1_Final_31: 3536351599604696566
+      Boss_1_Final_27: -661652362467950120
+      Boss_1_Final_51: -3319544019448012824
+      Boss_1_Final_18: -7312296038950219470
+      Boss_1_Final_6: 3118095387888000041
+      Boss_1_Final_30: 7482500154132398259
+      Boss_1_Final_43: 7847406315276002074
+      Boss_1_Final_29: 7893075913666641591
+      Boss_1_Final_52: 6119431988183576298
+      Boss_1_Final_32: 5993648625640814804
+      Boss_1_Final_40: 1538194192436311730
+      Boss_1_Final_53: -1050476621318163528
+      Boss_1_Final_55: -6328267759375216480
+      Boss_1_Final_33: 8341456992691219918
+      Boss_1_Final_57: 21147421447071237
+      Boss_1_Final_5: 3077314411781349967
+      Boss_1_Final_63: -4228807337230668099
+      Boss_1_Final_26: -6017501636725548521
+      Boss_1_Final_62: 9115452256236752706
+      Boss_1_Final_34: -7004600455887106241
+      Boss_1_Final_25: 7522640399524666671
+      Boss_1_Final_1: -1548340318519981048
+      Boss_1_Final_24: -7059621905258541692
+      Boss_1_Final_60: -6501097883356571258
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
