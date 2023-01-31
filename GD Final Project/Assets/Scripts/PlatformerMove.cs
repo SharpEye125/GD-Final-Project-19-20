@@ -7,9 +7,11 @@ public class PlatformerMove : MonoBehaviour
     //public AudioClip jumpSFX;
     public AudioSource jumpSFXPlayer;
     public float moveSpeed = 1.0f;
+    public float runSpeed = 2f;
     public float jumpSpeed = 1.0f;
     public int maxJumps = 2;
     public int jumpCount = 0;
+    public float maxFallSpeed = -20f;
     public bool grounded = false;
     bool right;
     Animator anim;
@@ -26,8 +28,21 @@ public class PlatformerMove : MonoBehaviour
     {
         float moveX = Input.GetAxis("Horizontal");
         Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
-        velocity.x = moveSpeed * moveX;
+        if (Input.GetButton("Sprint"))
+        {
+            //Debug.Log("Running!");
+            velocity.x = runSpeed * moveX;
+        }
+        else
+        {
+            velocity.x = moveSpeed * moveX;
+        }
+        if (velocity.y <= maxFallSpeed)
+        {
+            velocity.y = maxFallSpeed;
+        }
         GetComponent<Rigidbody2D>().velocity = velocity;
+        
         if (Input.GetButtonDown("Jump") && jumpCount < maxJumps)// && grounded)
         {
             Jump();
@@ -65,7 +80,7 @@ public class PlatformerMove : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 0)
+        if (collision.gameObject.layer == 12)
         {
             jumpCount = 0;
             grounded = true;
@@ -73,7 +88,7 @@ public class PlatformerMove : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 0)
+        if (collision.gameObject.layer == 12)
         {
             jumpCount++;
             grounded = false;
@@ -81,7 +96,7 @@ public class PlatformerMove : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 0)
+        if (collision.gameObject.layer == 12)
         {
             jumpCount = 0;
             grounded = true;
