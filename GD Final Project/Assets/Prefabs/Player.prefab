@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 2866267643599026766}
   - component: {fileID: 2866267643599026767}
   - component: {fileID: 2866267643599026775}
+  - component: {fileID: 2621781414976059957}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -505,3 +506,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2621781414976059957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866267643599026764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290d8329d466bdb4da47b54313a529c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  climbSpeed: 6
+  climbing: 0
+  grabOffJumpDelay: 1
+  ladder: {fileID: 0}
+  timer: 0

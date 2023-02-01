@@ -8,6 +8,7 @@ TagManager:
   - 2Way
   - Task
   - Music
+  - Ladder
   layers:
   - Default
   - TransparentFX

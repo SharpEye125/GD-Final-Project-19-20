@@ -37,6 +37,7 @@ public class PlatformerMove : MonoBehaviour
         {
             velocity.x = moveSpeed * moveX;
         }
+
         if (velocity.y <= maxFallSpeed)
         {
             velocity.y = maxFallSpeed;
@@ -75,6 +76,14 @@ public class PlatformerMove : MonoBehaviour
         {
             jumpCount++;
         }
+        if (GetComponent<LadderClimb>().climbing)
+        {
+            GetComponent<LadderClimb>().timer = 0;
+        }
+
+        GetComponent<LadderClimb>().GetOffLadder();
+
+        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0f);
         GetComponent<Rigidbody2D>().AddForce
             (new Vector2(0, 100 * jumpSpeed));
     }
@@ -84,6 +93,7 @@ public class PlatformerMove : MonoBehaviour
         {
             jumpCount = 0;
             grounded = true;
+            GetComponent<LadderClimb>().climbing = false;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -100,6 +110,7 @@ public class PlatformerMove : MonoBehaviour
         {
             jumpCount = 0;
             grounded = true;
+            GetComponent<LadderClimb>().climbing = false;
         }
     }
 }
