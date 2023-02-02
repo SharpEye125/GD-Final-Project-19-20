@@ -9,6 +9,8 @@ TagManager:
   - Task
   - Music
   - Ladder
+  - Enemy
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

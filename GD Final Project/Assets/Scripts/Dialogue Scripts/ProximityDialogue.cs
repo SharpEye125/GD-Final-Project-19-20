@@ -20,6 +20,12 @@ public class ProximityDialogue : MonoBehaviour
     void Update()
     {
         Vector2 distance = new Vector2(transform.position.x - player.position.x, transform.position.y - player.position.y);
+        if (distance.magnitude >= talkRange)
+        {
+            timer = 0;
+            hasTalked = false;
+            FindObjectOfType<DialogueManager>().EndDialogue();
+        }
         if (hasTalked == false)
         {
             if (distance.magnitude <= talkRange && Input.GetKeyDown(KeyCode.E))

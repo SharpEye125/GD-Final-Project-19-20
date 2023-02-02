@@ -156,7 +156,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021467388, y: -0.010733604}
+  m_Offset: {x: -0.013563335, y: -0.4573784}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -167,7 +167,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25579655, y: 0.56349754}
+  m_Size: {x: 0.09465492, y: 0.08357239}
   m_EdgeRadius: 0
 --- !u!1 &2866267643599026764
 GameObject:
@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 2866267643599026767}
   - component: {fileID: 2866267643599026775}
   - component: {fileID: 2621781414976059957}
+  - component: {fileID: 8462466534070051759}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -523,3 +524,18 @@ MonoBehaviour:
   grabOffJumpDelay: 1
   ladder: {fileID: 0}
   timer: 0
+--- !u!114 &8462466534070051759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866267643599026764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4195492a62862d47abb96a509869f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  respawnDelay: 4
+  checkPoint: {x: 0, y: 0, z: 0}
