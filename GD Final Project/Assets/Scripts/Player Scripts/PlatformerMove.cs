@@ -14,7 +14,7 @@ public class PlatformerMove : MonoBehaviour
     public float maxFallSpeed = -20f;
     public bool grounded = false;
     bool right;
-    Animator anim;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -32,10 +32,16 @@ public class PlatformerMove : MonoBehaviour
         {
             //Debug.Log("Running!");
             velocity.x = runSpeed * moveX;
+            anim.SetBool("grounded", grounded);
+            anim.SetFloat("x", velocity.x * 2);
+            anim.SetFloat("y", velocity.y * 2);
         }
         else
         {
             velocity.x = moveSpeed * moveX;
+            anim.SetBool("grounded", grounded);
+            anim.SetFloat("x", velocity.x);
+            anim.SetFloat("y", velocity.y);
         }
 
         if (velocity.y <= maxFallSpeed)
@@ -49,9 +55,7 @@ public class PlatformerMove : MonoBehaviour
             Jump();
             jumpSFXPlayer.Play();
         }
-        anim.SetBool("grounded", grounded);
-        anim.SetFloat("x", velocity.x);
-        anim.SetFloat("y", velocity.y);
+        
         float x = Input.GetAxisRaw("Horizontal");
         if (x > 0)
         {

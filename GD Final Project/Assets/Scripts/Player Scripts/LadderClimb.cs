@@ -71,6 +71,8 @@ public class LadderClimb : MonoBehaviour
         GetComponent<PlatformerMove>().jumpCount = 0;
         player.position = new Vector3(ladder.transform.position.x, player.position.y);
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+        GetComponent<PlatformerMove>().anim.SetBool("climbing", climbing);
+
     }
     public void GetOffLadder()
     {
@@ -78,5 +80,6 @@ public class LadderClimb : MonoBehaviour
         climbing = false;
         GetComponent<Rigidbody2D>().gravityScale = gravityAtStart;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        GetComponent<PlatformerMove>().anim.SetBool("climbing", climbing);
     }
 }
