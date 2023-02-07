@@ -71,6 +71,10 @@ public class PlatformerMove : MonoBehaviour
             velocity.y = maxFallSpeed;
             receiveFallStun = true;
         }
+        else
+        {
+            receiveFallStun = false;
+        }
         
         GetComponent<Rigidbody2D>().velocity = velocity;
         
