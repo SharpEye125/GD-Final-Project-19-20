@@ -13,14 +13,14 @@ public class PlatformerMove : MonoBehaviour
     public int jumpCount = 0;
     public float maxFallSpeed = -20f;
     public bool grounded = false;
-    public bool receiveFallStun = false;
-    public bool fallStun = false;
-    public float fallStunTimer = 0;
+    bool receiveFallStun = false;
+    bool fallStun = false;
+    float fallStunTimer = 0;
     public float fallStunLength = 2;
     bool right;
     public Animator anim;
     public Vector2 velocity;
-    public Vector2 velocityTest;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -41,11 +41,13 @@ public class PlatformerMove : MonoBehaviour
             anim.SetBool("grounded", grounded);
             anim.SetFloat("x", velocity.x);
             anim.SetFloat("y", velocity.y);
+            GetComponent<SpriteRenderer>().color = Color.yellow;
             if (fallStunTimer >= fallStunLength)
             {
                 fallStun = false;
                 receiveFallStun = false;
                 fallStunTimer = 0;
+                GetComponent<SpriteRenderer>().color = Color.white;
                 anim.SetBool("landed", fallStun);
             }
         }
@@ -69,7 +71,7 @@ public class PlatformerMove : MonoBehaviour
             velocity.y = maxFallSpeed;
             receiveFallStun = true;
         }
-        velocityTest = velocity;
+        
         GetComponent<Rigidbody2D>().velocity = velocity;
         
         if (Input.GetButtonDown("Jump") && jumpCount < maxJumps && fallStun == false)// && grounded)

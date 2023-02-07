@@ -578,6 +578,11 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2866267643599026761, guid: 3976d852700493342a1bd4f03b43df0a,
+        type: 3}
+      propertyPath: maxFallSpeed
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 2866267643599026764, guid: 3976d852700493342a1bd4f03b43df0a,
         type: 3}
       propertyPath: m_Name
