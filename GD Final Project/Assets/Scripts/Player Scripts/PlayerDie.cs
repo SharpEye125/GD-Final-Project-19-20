@@ -7,7 +7,7 @@ public class PlayerDie : MonoBehaviour
     public float timer = 0;
     public float respawnDelay = 4;
     public Vector3 checkPoint;
-    bool dead;
+    public bool dead;
     
 
     //in case of multiple death animation depending on enemy:

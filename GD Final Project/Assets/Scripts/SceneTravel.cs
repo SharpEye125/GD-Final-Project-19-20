@@ -21,7 +21,7 @@ public class SceneTravel : MonoBehaviour
     void Update()
     {
         Vector2 distance = new Vector2(transform.position.x - player.position.x, transform.position.y - player.position.y);
-        if (distance.magnitude <= inputRange && Input.GetKeyDown(KeyCode.E) && player.gameObject.GetComponent<PlatformerMove>().grounded == true)
+        if (distance.magnitude <= inputRange && Input.GetKeyDown(KeyCode.E) && player.gameObject.GetComponent<PlatformerMove>().grounded == true && player.gameObject.GetComponent<PlayerDie>().dead != true)
         {
             SceneManager.LoadScene(sceneNumber);
         }
