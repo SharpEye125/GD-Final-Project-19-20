@@ -20,11 +20,12 @@ public class ProximityDialogue : MonoBehaviour
     void Update()
     {
         Vector2 distance = new Vector2(transform.position.x - player.position.x, transform.position.y - player.position.y);
-        if (distance.magnitude >= talkRange)
+        if (distance.magnitude >= talkRange && hasTalked == true)
         {
             timer = 0;
             hasTalked = false;
             FindObjectOfType<DialogueManager>().EndDialogue();
+            Debug.Log("Walked away from " + gameObject.name);
         }
         if (hasTalked == false)
         {
