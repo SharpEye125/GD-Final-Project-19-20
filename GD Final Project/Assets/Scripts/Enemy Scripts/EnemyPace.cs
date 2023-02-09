@@ -23,6 +23,17 @@ public class EnemyPace : MonoBehaviour
             //do something
             moveDir *= -1;
             timer = 0;
+            if (moveDir.x != 0)
+            {
+                if (moveDir.x == 1)
+                {
+                    GetComponent<SpriteRenderer>().flipX = false;
+                }
+                else
+                {
+                    GetComponent<SpriteRenderer>().flipX = true;
+                }
+            }
         }
         GetComponent<Rigidbody2D>().velocity = moveDir * moveSpeed;
 
