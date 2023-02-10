@@ -10,20 +10,35 @@ public class SlimeCleanupTask : MonoBehaviour
     bool mopping;
     public GameObject mopPrefab;
     public GameObject slime;
+    public int cleanSlimeCount;
+    public int slimeCount;
 
     public float colorChangeRate = 2;
-    public Color slimeNorm;
+    //public Color slimeNorm;
     public Color slimeClean;
+    public GameObject completion;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject[] slimes = GameObject.FindGameObjectsWithTag("Slime");
+        foreach (GameObject Slime in slimes)
+        {
+            slimeCount++;
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (cleanSlimeCount < slimeCount)
+        {
+            completion.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        else
+        {
+            completion.GetComponent<SpriteRenderer>().color = Color.green;
+        }
         if (Input.GetButton("Fire1") && hasMop)
         {
             mopping = true;
@@ -66,6 +81,11 @@ public class SlimeCleanupTask : MonoBehaviour
     {
         if (collision.tag == "Slime" && collision.gameObject == slime)
         {
+            if (slime.GetComponent<SpriteRenderer>().color == slimeClean && collision.transform.localScale.z != 2)
+            {
+                cleanSlimeCount++;
+                collision.transform.localScale = new Vector3(collision.transform.localScale.x, collision.transform.localScale.y, 2);
+            }
             slime = null;
         }
     }
