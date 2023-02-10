@@ -131,7 +131,10 @@ public class PlatformerMove : MonoBehaviour
             //anim.SetTrigger("landed");
             jumpCount = 0;
             grounded = true;
-            GetComponent<LadderClimb>().climbing = false;
+            if (velocity.y == 0)
+            {
+                GetComponent<LadderClimb>().climbing = false;
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

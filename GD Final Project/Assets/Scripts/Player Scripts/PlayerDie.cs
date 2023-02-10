@@ -42,7 +42,7 @@ public class PlayerDie : MonoBehaviour
             //sample code for grabbing the death animation from a specific enemy type: (don't forget to uncomment deathAnim)
             //deathAnim = collision.GetComponent<EnemyType>().killAnim;
         }
-        if (collision.tag == "Checkpoint")
+        if (collision.tag == "CheckPoint")
         {
             checkPoint = collision.transform.position;
         }

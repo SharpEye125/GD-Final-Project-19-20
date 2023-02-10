@@ -11,6 +11,8 @@ TagManager:
   - Ladder
   - Enemy
   - CheckPoint
+  - Slime
+  - Mop
   layers:
   - Default
   - TransparentFX
