@@ -115,7 +115,7 @@ public class PlatformerMove : MonoBehaviour
 
         GetComponent<LadderClimb>().GetOffLadder();
 
-        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, velocity.y % 6);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0f);
         GetComponent<Rigidbody2D>().AddForce
             (new Vector2(0, 100 * jumpSpeed));
     }
