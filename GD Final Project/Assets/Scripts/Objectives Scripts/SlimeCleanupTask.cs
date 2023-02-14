@@ -7,7 +7,8 @@ public class SlimeCleanupTask : MonoBehaviour
     public bool hasMop;
 
     //Will be used to let animator know what animation to use
-    bool mopping;
+    public bool mopping;
+    public float mopSpeed = 2;
     public GameObject mopPrefab;
     public GameObject slime;
     public int cleanSlimeCount;
@@ -31,6 +32,7 @@ public class SlimeCleanupTask : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        
         if (cleanSlimeCount < slimeCount)
         {
             completion.GetComponent<SpriteRenderer>().color = Color.red;
@@ -39,7 +41,7 @@ public class SlimeCleanupTask : MonoBehaviour
         {
             completion.GetComponent<SpriteRenderer>().color = Color.green;
         }
-        if (Input.GetButton("Fire1") && hasMop)
+        if (Input.GetButton("Fire1") && hasMop && GetComponent<PlatformerMove>().grounded == true)
         {
             mopping = true;
             if (slime != null)
@@ -51,14 +53,7 @@ public class SlimeCleanupTask : MonoBehaviour
         {
             mopping = false;
         }
-        if (mopping)
-        {
-            GetComponent<SpriteRenderer>().color = Color.blue;
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().color = Color.white;
-        }
+        GetComponent<Animator>().SetBool("mopping", mopping);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

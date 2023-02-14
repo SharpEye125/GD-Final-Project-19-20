@@ -2028,11 +2028,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasMop: 0
+  mopping: 0
+  mopSpeed: 2
   mopPrefab: {fileID: 0}
   slime: {fileID: 0}
   cleanSlimeCount: 0
   slimeCount: 0
-  colorChangeRate: 0
+  colorChangeRate: 0.5
   slimeClean: {r: 0.13725491, g: 0.7372549, b: 0, a: 1}
   completion: {fileID: 99635871}
 --- !u!1001 &1628909541

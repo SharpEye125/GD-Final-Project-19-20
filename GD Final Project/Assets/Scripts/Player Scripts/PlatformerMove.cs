@@ -51,6 +51,13 @@ public class PlatformerMove : MonoBehaviour
                 anim.SetBool("landed", fallStun);
             }
         }
+        else if (GetComponent<SlimeCleanupTask>() != null && GetComponent<SlimeCleanupTask>().mopping == true)
+        {
+            velocity.x = GetComponent<SlimeCleanupTask>().mopSpeed * moveX;
+            anim.SetBool("grounded", grounded);
+            anim.SetFloat("x", velocity.x);
+            anim.SetFloat("y", velocity.y);
+        }
         else if (Input.GetButton("Sprint"))
         {
             //Debug.Log("Running!");
@@ -75,7 +82,6 @@ public class PlatformerMove : MonoBehaviour
         {
             receiveFallStun = false;
         }
-        
         GetComponent<Rigidbody2D>().velocity = velocity;
         
         if (Input.GetButtonDown("Jump") && jumpCount < maxJumps && fallStun == false)// && grounded)
