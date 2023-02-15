@@ -1030,6 +1030,8 @@ GameObject:
   - component: {fileID: 120154536}
   - component: {fileID: 120154535}
   - component: {fileID: 120154534}
+  - component: {fileID: 120154538}
+  - component: {fileID: 120154537}
   m_Layer: 0
   m_Name: Magic Mop_0
   m_TagString: Untagged
@@ -1124,6 +1126,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &120154537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120154533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d664d199fcde81408b5a42c3387fc8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkRange: 3
+  player: {fileID: 0}
+  hasTalked: 0
+  waitTime: 3
+--- !u!114 &120154538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120154533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0a7f3b42712a2f488f9596fd277c855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Magic Mop
+    portrait: {fileID: 1327423718, guid: 018f6086d5e4e0447a9c586614252dae, type: 3}
+    sentences:
+    - '*grumble grumble*'
+    - Why does everyone like that stuck up Broom?!
 --- !u!1 &151120385
 GameObject:
   m_ObjectHideFlags: 0
@@ -51205,7 +51241,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1481099425}
   m_AnimatedTarget: {fileID: 1481099418}
   m_LayerIndex: 0
-  m_ShowDebugText: 1
+  m_ShowDebugText: 0
   m_ChildCameras:
   - {fileID: 687734544}
   - {fileID: 1858732216}
@@ -51229,7 +51265,7 @@ MonoBehaviour:
     m_ActivateAfter: 0
     m_MinDuration: 0
   - m_FullHash: -2140729998
-    m_VirtualCamera: {fileID: 1040651109}
+    m_VirtualCamera: {fileID: 0}
     m_ActivateAfter: 0
     m_MinDuration: 0
   m_DefaultBlend:
@@ -80214,6 +80250,8 @@ GameObject:
   - component: {fileID: 2102760899}
   - component: {fileID: 2102760898}
   - component: {fileID: 2102760897}
+  - component: {fileID: 2102760901}
+  - component: {fileID: 2102760900}
   m_Layer: 0
   m_Name: Magic Broom_0
   m_TagString: Untagged
@@ -80308,6 +80346,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2102760900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102760896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d664d199fcde81408b5a42c3387fc8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkRange: 3
+  player: {fileID: 0}
+  hasTalked: 0
+  waitTime: 3
+--- !u!114 &2102760901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102760896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0a7f3b42712a2f488f9596fd277c855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Magic Broom
+    portrait: {fileID: -608508089, guid: 143f2d1f972a0b84e8606194fa230ef5, type: 3}
+    sentences:
+    - Need something?
+    - Have you heard what that mop has been saying about me?
+    - It's completely untrue! Just because I'm THE best and most beautiful magic
+      item doesn't mean I'm stupid!
 --- !u!1 &2131815222
 GameObject:
   m_ObjectHideFlags: 0
@@ -80423,7 +80497,12 @@ PrefabInstance:
     - target: {fileID: 2866267643599026761, guid: 3976d852700493342a1bd4f03b43df0a,
         type: 3}
       propertyPath: maxFallSpeed
-      value: -30
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866267643599026761, guid: 3976d852700493342a1bd4f03b43df0a,
+        type: 3}
+      propertyPath: fallStunLength
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2866267643599026764, guid: 3976d852700493342a1bd4f03b43df0a,
         type: 3}

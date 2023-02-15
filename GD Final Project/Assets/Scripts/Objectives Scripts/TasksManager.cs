@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CleanSlimesCheck : MonoBehaviour
+public class TasksManager : MonoBehaviour
 {
-    public Color taskComplete;
-    public Color taskIncomplete;
+    public static bool slimeTask;
+    public static bool necromancerTask;
+    public static bool beholderTask;
+
+
+
     // Start is called before the first frame update
     void Start()
     {

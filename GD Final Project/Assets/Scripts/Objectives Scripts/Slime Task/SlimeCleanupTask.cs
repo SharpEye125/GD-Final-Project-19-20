@@ -40,6 +40,8 @@ public class SlimeCleanupTask : MonoBehaviour
         else
         {
             completion.GetComponent<SpriteRenderer>().color = Color.green;
+            //CleanSlimesCheck.clean = true;
+            //TasksManager.slimeTask = true;
         }
         if (Input.GetButton("Fire1") && hasMop && GetComponent<PlatformerMove>().grounded == true)
         {
@@ -61,16 +63,6 @@ public class SlimeCleanupTask : MonoBehaviour
         {
             slime = collision.gameObject;
         }
-        if (collision.tag == "Mop" && Input.GetKeyDown(KeyCode.E) && !hasMop)
-        {
-            hasMop = true;
-            collision.GetComponent<SpriteRenderer>().enabled = false;
-        }
-        else if (collision.tag == "Mop" && Input.GetKeyDown(KeyCode.E) && hasMop)
-        {
-            hasMop = false;
-            collision.GetComponent<SpriteRenderer>().enabled = true;
-        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -79,7 +71,7 @@ public class SlimeCleanupTask : MonoBehaviour
             if (slime.GetComponent<SpriteRenderer>().color == slimeClean && collision.transform.localScale.z != 2)
             {
                 cleanSlimeCount++;
-                collision.transform.localScale = new Vector3(collision.transform.localScale.x, collision.transform.localScale.y, 2);
+                //collision.transform.localScale = new Vector3(collision.transform.localScale.x, collision.transform.localScale.y, 2);
             }
             slime = null;
         }

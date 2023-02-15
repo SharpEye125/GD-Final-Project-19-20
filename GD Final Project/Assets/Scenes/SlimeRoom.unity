@@ -1098,6 +1098,7 @@ GameObject:
   - component: {fileID: 647475336}
   - component: {fileID: 647475335}
   - component: {fileID: 647475334}
+  - component: {fileID: 647475337}
   m_Layer: 0
   m_Name: Magic Mop
   m_TagString: Mop
@@ -1130,7 +1131,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1.1466675, y: 0.32240227}
-  m_EdgeRadius: 1.16
+  m_EdgeRadius: 0
 --- !u!212 &647475335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1198,6 +1199,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &647475337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647475333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac237df01d302a489b94ab03e004aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupRange: 1
 --- !u!1 &722232199
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,6 +2241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1879233348}
+  - component: {fileID: 1879233349}
   m_Layer: 0
   m_Name: Slimes
   m_TagString: Untagged
@@ -2257,6 +2272,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1879233349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879233347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561a22d3e2f601d488dc61b49ac6a422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2041169757
 GameObject:
   m_ObjectHideFlags: 3
