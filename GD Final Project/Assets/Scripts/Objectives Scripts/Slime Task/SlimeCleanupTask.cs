@@ -46,6 +46,8 @@ public class SlimeCleanupTask : MonoBehaviour
         if (Input.GetButton("Fire1") && hasMop && GetComponent<PlatformerMove>().grounded == true)
         {
             mopping = true;
+            
+            
             if (slime != null)
             {
                 slime.GetComponent<SpriteRenderer>().color = Color.Lerp(slime.GetComponent<SpriteRenderer>().color, slimeClean, colorChangeRate);
@@ -54,6 +56,25 @@ public class SlimeCleanupTask : MonoBehaviour
         else
         {
             mopping = false;
+            mopPrefab.GetComponent<TrailRenderer>().emitting = false;
+            mopPrefab.GetComponent<ParticleSystem>().Stop();
+        }
+        if (mopping)
+        {
+            if (mopPrefab.GetComponent<ParticleSystem>().isPlaying == false)
+            {
+                mopPrefab.GetComponent<ParticleSystem>().Play();
+            }
+            
+            mopPrefab.GetComponent<TrailRenderer>().emitting = true;
+        }
+        else
+        {
+            if (mopPrefab.GetComponent<ParticleSystem>().isPlaying)
+            {
+                mopPrefab.GetComponent<ParticleSystem>().Stop();
+            }
+            mopPrefab.GetComponent<TrailRenderer>().emitting = false;
         }
         GetComponent<Animator>().SetBool("mopping", mopping);
     }
@@ -71,7 +92,8 @@ public class SlimeCleanupTask : MonoBehaviour
             if (slime.GetComponent<SpriteRenderer>().color == slimeClean && collision.transform.localScale.z != 2)
             {
                 cleanSlimeCount++;
-                //collision.transform.localScale = new Vector3(collision.transform.localScale.x, collision.transform.localScale.y, 2);
+                slime.GetComponent<ParticleSystem>().Play();
+                collision.transform.localScale = new Vector3(collision.transform.localScale.x, collision.transform.localScale.y, 2);
             }
             slime = null;
         }
