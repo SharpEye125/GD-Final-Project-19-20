@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524aee64717d03a4caa1c0734a83dcf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNumber: 2
+  sceneNumber: 4
   player: {fileID: 0}
   inputRange: 2
 --- !u!212 &89583860
@@ -1194,6 +1194,8 @@ MonoBehaviour:
   point: {fileID: 722860811}
   player: {fileID: 0}
   inputRange: 2
+  tpOffset: {x: 0, y: -0.9}
+  tpDelay: 0.25
 --- !u!212 &151120387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77421,6 +77423,8 @@ MonoBehaviour:
   point: {fileID: 1349479657}
   player: {fileID: 0}
   inputRange: 2
+  tpOffset: {x: 0, y: -0.8}
+  tpDelay: 0.25
 --- !u!212 &1493640483
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79968,6 +79972,8 @@ MonoBehaviour:
   point: {fileID: 2001610396}
   player: {fileID: 0}
   inputRange: 2
+  tpOffset: {x: 0, y: -0.8}
+  tpDelay: 0.25
 --- !u!212 &1938807427
 SpriteRenderer:
   m_ObjectHideFlags: 0
