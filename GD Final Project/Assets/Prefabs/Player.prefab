@@ -348,8 +348,11 @@ MonoBehaviour:
   jumpSpeed: 4.5
   maxJumps: 1
   jumpCount: 0
-  maxFallSpeed: -30
+  maxFallSpeed: -20
   grounded: 0
+  fallStunLength: 2
+  anim: {fileID: 0}
+  velocity: {x: 0, y: 0}
 --- !u!114 &2866267643599026774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,3 +542,4 @@ MonoBehaviour:
   timer: 0
   respawnDelay: 4
   checkPoint: {x: 0, y: 0, z: 0}
+  dead: 0
