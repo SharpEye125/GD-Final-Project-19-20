@@ -350,7 +350,7 @@ MonoBehaviour:
   jumpCount: 0
   maxFallSpeed: -20
   grounded: 0
-  fallStunLength: 2
+  fallStunLength: 1
   anim: {fileID: 0}
   velocity: {x: 0, y: 0}
 --- !u!114 &2866267643599026774
