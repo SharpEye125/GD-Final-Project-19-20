@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FallThru : MonoBehaviour
 {
+    public BoxCollider2D pBodyCollider;
     public BoxCollider2D pTriggerCollider;
     public CompositeCollider2D dCollider;
     public EdgeCollider2D altCollider;
@@ -86,18 +87,22 @@ public class FallThru : MonoBehaviour
     }
     void DisableDCollider()
     {
-        dCollider.isTrigger = true;
+        //dCollider.isTrigger = true;
+        Physics2D.IgnoreCollision(pBodyCollider, dCollider, true);
     }
     void EnableDCollider()
     {
-        dCollider.isTrigger = false;
+        //dCollider.isTrigger = false;
+        Physics2D.IgnoreCollision(pBodyCollider, dCollider, false);
     }
     void DisableAltCollider()
     {
-        altCollider.isTrigger = true;
+        //altCollider.isTrigger = true;
+        Physics2D.IgnoreCollision(pBodyCollider, altCollider, true);
     }
     void EnableAltCollider()
     {
-        altCollider.isTrigger = false;
+        //altCollider.isTrigger = false;
+        Physics2D.IgnoreCollision(pBodyCollider, altCollider, false);
     }
 }

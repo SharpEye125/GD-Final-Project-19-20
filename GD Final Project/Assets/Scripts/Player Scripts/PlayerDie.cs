@@ -25,6 +25,7 @@ public class PlayerDie : MonoBehaviour
         if (dead)
         {
             timer += Time.deltaTime;
+            DeathState();
         }
         if (timer >= respawnDelay)
         {
@@ -38,7 +39,7 @@ public class PlayerDie : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             dead = true;
-            DeathState();
+            
             //sample code for grabbing the death animation from a specific enemy type: (don't forget to uncomment deathAnim)
             //deathAnim = collision.GetComponent<EnemyType>().killAnim;
         }

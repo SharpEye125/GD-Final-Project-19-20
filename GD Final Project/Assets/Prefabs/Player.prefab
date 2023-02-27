@@ -277,11 +277,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520827b7d8886d4438358b1335954743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pBodyCollider: {fileID: 2866267643599026763}
   pTriggerCollider: {fileID: 2866267643599026767}
   dCollider: {fileID: 0}
   altCollider: {fileID: 0}
   timer: 0
-  disableTime: 0.75
+  disableTime: 0.5
   fallThru: 0
 --- !u!61 &2866267643599026763
 BoxCollider2D:
