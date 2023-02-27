@@ -18,7 +18,7 @@ public class ProximityBroomPickup : MonoBehaviour
         Vector2 distance = new Vector2(transform.position.x - player.position.x, transform.position.y - player.position.y);
         if (distance.magnitude <= pickupRange && Input.GetKeyDown(KeyCode.E) && player.gameObject.GetComponent<PlatformerMove>().grounded == true)
         {
-            Debug.Log(distance.magnitude);
+            //Debug.Log(distance.magnitude);
             if (player.GetComponent<SlimeCleanupTask>().hasMop == true)
             {
                 player.GetComponent<SlimeCleanupTask>().hasMop = false;
