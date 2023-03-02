@@ -2304,6 +2304,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2866267642491692775, guid: 3976d852700493342a1bd4f03b43df0a,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e132334d0a5b1f34189ea5cf8aef2a93, type: 3}
     - target: {fileID: 2866267643599026764, guid: 3976d852700493342a1bd4f03b43df0a,
         type: 3}
       propertyPath: m_Name
@@ -5128,7 +5133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524aee64717d03a4caa1c0734a83dcf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNumber: 1
+  sceneNumber: 2
   player: {fileID: 0}
   inputRange: 1.5
 --- !u!1 &5920010545598827087
