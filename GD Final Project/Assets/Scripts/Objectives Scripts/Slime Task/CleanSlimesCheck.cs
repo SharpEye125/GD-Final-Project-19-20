@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CleanSlimesCheck : MonoBehaviour
 {
+    public Color cleanedColor;
 
-    [SerializeField] public static bool clean;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,16 +13,8 @@ public class CleanSlimesCheck : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (clean)
-        {
-            GameObject[] slimes = GameObject.FindGameObjectsWithTag("Slime");
-            foreach (GameObject Slime in slimes)
-            {
-                Slime.GetComponent<SpriteRenderer>().color = FindObjectOfType<SlimeCleanupTask>().slimeClean;
-            }
-            
-        }
+
     }
 }

@@ -32,7 +32,20 @@ public class SlimeCleanupTask : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        if (slime != null && slime.GetComponent<SpriteRenderer>().color == slimeClean && slime.transform.localScale.z != 2 ||
+    slime != null && slime.GetComponent<SpriteRenderer>().color.a <= 0.1f && slime.transform.localScale.z != 2)
+        {
+            cleanSlimeCount++;
+            if (slime.GetComponent<ParticleSystem>() != null)
+            {
+                slime.GetComponent<ParticleSystem>().Play();
+            }
+            slime.transform.localScale = new Vector3(slime.transform.localScale.x, slime.transform.localScale.y, 2);
+            if (slime.GetComponent<BoxCollider2D>().isTrigger == false)
+            {
+                slime.GetComponent<BoxCollider2D>().isTrigger = true;
+            }
+        }
         if (cleanSlimeCount < slimeCount)
         {
             completion.GetComponent<SpriteRenderer>().color = Color.red;
@@ -83,6 +96,7 @@ public class SlimeCleanupTask : MonoBehaviour
         if (collision.tag == "Slime")
         {
             slime = collision.gameObject;
+            slimeClean = slime.GetComponent<CleanSlimesCheck>().cleanedColor;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
