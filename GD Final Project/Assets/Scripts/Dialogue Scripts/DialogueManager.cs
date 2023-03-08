@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialougeText;
     public Image portrait;
-    
+    public AudioClip voice;
 
     public Animator animator;
 
@@ -20,6 +20,10 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", true);
         nameText.text = dialogue.name;
         portrait.sprite = dialogue.portrait;
+        if (dialogue.voice != null)
+        {
+            voice = dialogue.voice;
+        }
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
         {
@@ -49,7 +53,10 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialougeText.text += letter;
-            
+            if (letter != ' ' && voice != null)
+            {
+                dialougeText.gameObject.GetComponent<AudioSource>().PlayOneShot(voice);
+            }
             yield return new WaitForSeconds(textSpeed);
         }
     }

@@ -43,7 +43,7 @@ public class SlimeCleanupTask : MonoBehaviour
             slime.transform.localScale = new Vector3(slime.transform.localScale.x, slime.transform.localScale.y, 2);
             if (slime.GetComponent<BoxCollider2D>().isTrigger == false)
             {
-                slime.GetComponent<BoxCollider2D>().isTrigger = true;
+                slime.SetActive(false);
             }
         }
         if (cleanSlimeCount < slimeCount)

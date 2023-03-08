@@ -38,9 +38,7 @@ public class PlatformerMove : MonoBehaviour
         {
             fallStunTimer += Time.deltaTime;
             velocity.x = moveX;
-            anim.SetBool("grounded", grounded);
-            anim.SetFloat("x", velocity.x);
-            anim.SetFloat("y", velocity.y);
+            UpdateAnimVars();
             GetComponent<SpriteRenderer>().color = Color.yellow;
             if (fallStunTimer >= fallStunLength)
             {
@@ -54,24 +52,18 @@ public class PlatformerMove : MonoBehaviour
         else if (GetComponent<SlimeCleanupTask>() != null && GetComponent<SlimeCleanupTask>().mopping == true)
         {
             velocity.x = GetComponent<SlimeCleanupTask>().mopSpeed * moveX;
-            anim.SetBool("grounded", grounded);
-            anim.SetFloat("x", velocity.x);
-            anim.SetFloat("y", velocity.y);
+            UpdateAnimVars();
         }
         else if (Input.GetButton("Sprint"))
         {
             //Debug.Log("Running!");
             velocity.x = runSpeed * moveX;
-            anim.SetBool("grounded", grounded);
-            anim.SetFloat("x", velocity.x);
-            anim.SetFloat("y", velocity.y);
+            UpdateAnimVars();
         }
         else
         {
             velocity.x = moveSpeed * moveX;
-            anim.SetBool("grounded", grounded);
-            anim.SetFloat("x", velocity.x);
-            anim.SetFloat("y", velocity.y);
+            UpdateAnimVars();
         }
         if (velocity.y <= maxFallSpeed)
         {
@@ -124,6 +116,12 @@ public class PlatformerMove : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0f);
         GetComponent<Rigidbody2D>().AddForce
             (new Vector2(0, 100 * jumpSpeed));
+    }
+    public void UpdateAnimVars()
+    {
+        anim.SetBool("grounded", grounded);
+        anim.SetFloat("x", velocity.x);
+        anim.SetFloat("y", velocity.y);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
