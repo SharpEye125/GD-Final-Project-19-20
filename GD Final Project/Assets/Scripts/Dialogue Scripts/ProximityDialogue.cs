@@ -9,7 +9,7 @@ public class ProximityDialogue : MonoBehaviour
     public bool hasTalked = false;
     float timer = 0;
     public float waitTime = 3f;
-
+    public bool conversing;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +20,9 @@ public class ProximityDialogue : MonoBehaviour
     void Update()
     {
         Vector2 distance = new Vector2(transform.position.x - player.position.x, transform.position.y - player.position.y);
-        if (distance.magnitude >= talkRange && hasTalked == true)
+        if (distance.magnitude >= talkRange && conversing == true)
         {
+            conversing = false;
             timer = 0;
             hasTalked = false;
             FindObjectOfType<DialogueManager>().EndDialogue();
@@ -33,6 +34,7 @@ public class ProximityDialogue : MonoBehaviour
             {
                 GetComponent<DialogueTrigger>().TriggerDialogue();
                 hasTalked = true;
+                conversing = true;
             }
         }
         if (hasTalked == true)

@@ -10,14 +10,15 @@ public class DialogueManager : MonoBehaviour
     public Text dialougeText;
     public Image portrait;
     public AudioClip voice;
-
+    public bool talking;
     public Animator animator;
 
     private Queue<string> sentences;
 
     public void StartDialogue(Dialogue dialogue)
     {
-        animator.SetBool("isOpen", true);
+        talking = true;
+        animator.SetBool("isOpen", talking);
         nameText.text = dialogue.name;
         portrait.sprite = dialogue.portrait;
         voice = dialogue.voice;
@@ -59,7 +60,8 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialogue()
     {
-        animator.SetBool("isOpen", false);
+        talking = false;
+        animator.SetBool("isOpen", talking);
     }
 
     // Start is called before the first frame update
