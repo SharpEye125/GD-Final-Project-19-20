@@ -8,16 +8,19 @@ public class PlatformerMove : MonoBehaviour
     public AudioSource jumpSFXPlayer;
     public float moveSpeed = 1.0f;
     public float runSpeed = 2f;
+
     public float jumpSpeed = 1.0f;
     public int maxJumps = 2;
     public int jumpCount = 0;
-    public float maxFallSpeed = -20f;
     public bool grounded = false;
+
+    //Fall Stun related variables
+    public float maxFallSpeed = -20f;
+    public float fallStunLength = 2;
+    float fallStunTimer = 0;
     bool receiveFallStun = false;
     bool fallStun = false;
-    float fallStunTimer = 0;
-    public float fallStunLength = 2;
-    bool right;
+
     public Animator anim;
     public Vector2 velocity;
     
@@ -25,6 +28,7 @@ public class PlatformerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<SpriteRenderer>().flipX = false;
         anim = GetComponent<Animator>();
         //jumpSFXPlayer = GetComponent<AudioSource>();
     }
@@ -36,6 +40,7 @@ public class PlatformerMove : MonoBehaviour
         velocity = GetComponent<Rigidbody2D>().velocity;
         if (fallStun)
         {
+            //Activates fallStun effects and duration timer
             fallStunTimer += Time.deltaTime;
             velocity.x = moveX;
             UpdateAnimVars();
@@ -51,6 +56,7 @@ public class PlatformerMove : MonoBehaviour
         }
         else if (GetComponent<SlimeCleanupTask>() != null && GetComponent<SlimeCleanupTask>().mopping == true)
         {
+            //When mopping use mopSpeed
             velocity.x = GetComponent<SlimeCleanupTask>().mopSpeed * moveX;
             UpdateAnimVars();
         }
@@ -62,11 +68,13 @@ public class PlatformerMove : MonoBehaviour
         }
         else
         {
+            //Walk moveSpeed
             velocity.x = moveSpeed * moveX;
             UpdateAnimVars();
         }
         if (velocity.y <= maxFallSpeed)
         {
+            //if falling at maxFallSpeed velocity keep velocity at maxSpeed and allow for fallStun
             velocity.y = maxFallSpeed;
             receiveFallStun = true;
         }
@@ -83,21 +91,24 @@ public class PlatformerMove : MonoBehaviour
         }
         
         float x = Input.GetAxisRaw("Horizontal");
+
+        //Turn player to correct direction
         if (x > 0)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
-            //Vector3 s = transform.localScale;
-            //s.x = 1;
-            //transform.localScale = s;
-            
+            //GetComponent<SpriteRenderer>().flipX = false;
+            Vector3 s = transform.localScale;
+            s.x = Mathf.Abs(s.x);
+            transform.localScale = s;
         }
         else if (x < 0)
         {
-            //Vector3 s = transform.localScale;
-            //s.x = -1;
-            //transform.localScale = s;
-            
-            GetComponent<SpriteRenderer>().flipX = true;
+            Vector3 s = transform.localScale;
+            if (s.x > 0)
+            {
+                s.x *= -1;
+            }
+            transform.localScale = s;
+            //GetComponent<SpriteRenderer>().flipX = true;
         }
     }
     public void Jump()
@@ -127,8 +138,10 @@ public class PlatformerMove : MonoBehaviour
     {
         if (collision.gameObject.layer == 12)
         {
+            //When landing on the ground
             if(receiveFallStun)
             {
+                //If landed at maxFallSpeed start fall stun
                 fallStun = true;
                 anim.SetBool("landed", fallStun);
             }
@@ -145,6 +158,7 @@ public class PlatformerMove : MonoBehaviour
     {
         if (collision.gameObject.layer == 12)
         {
+            //When leaving the ground
             jumpCount++;
             grounded = false;
         }
@@ -153,6 +167,7 @@ public class PlatformerMove : MonoBehaviour
     {
         if (collision.gameObject.layer == 12)
         {
+            //When on the ground
             jumpCount = 0;
             grounded = true;
             GetComponent<LadderClimb>().climbing = false;

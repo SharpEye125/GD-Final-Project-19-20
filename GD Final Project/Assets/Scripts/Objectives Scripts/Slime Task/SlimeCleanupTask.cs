@@ -76,12 +76,14 @@ public class SlimeCleanupTask : MonoBehaviour
         }
         else
         {
+            //if not pressing Fire1 input key to mop or not grounded stop mopping
             mopping = false;
             mopPrefab.GetComponent<TrailRenderer>().emitting = false;
             mopPrefab.GetComponent<ParticleSystem>().Stop();
         }
         if (mopping)
         {
+            //play mopping particles
             if (mopPrefab.GetComponent<ParticleSystem>().isPlaying == false)
             {
                 mopPrefab.GetComponent<ParticleSystem>().Play();
@@ -91,6 +93,7 @@ public class SlimeCleanupTask : MonoBehaviour
         }
         else
         {
+            //stop emitting mopping particles
             if (mopPrefab.GetComponent<ParticleSystem>().isPlaying)
             {
                 mopPrefab.GetComponent<ParticleSystem>().Stop();
@@ -103,6 +106,7 @@ public class SlimeCleanupTask : MonoBehaviour
     {
         if (collision.tag == "Slime")
         {
+            //if standing on slime, set current slime gameObject to current slime and set slimeClean color to this slime gameObjects clean color
             slime = collision.gameObject;
             slimeClean = slime.GetComponent<CleanSlimesCheck>().cleanedColor;
         }
@@ -111,12 +115,15 @@ public class SlimeCleanupTask : MonoBehaviour
     {
         if (collision.tag == "Slime" && collision.gameObject == slime)
         {
+            //if walked away from slime
             if (slime.GetComponent<SpriteRenderer>().color == slimeClean && collision.transform.localScale.z != 2)
             {
+                //if slime the player walked away from is clean add it to the tally
                 cleanSlimeCount++;
                 slime.GetComponent<ParticleSystem>().Play();
                 collision.transform.localScale = new Vector3(collision.transform.localScale.x, collision.transform.localScale.y, 2);
             }
+            //remove slime from current slime object variable
             slime = null;
         }
     }

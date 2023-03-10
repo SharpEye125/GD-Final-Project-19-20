@@ -49,13 +49,17 @@ public class PausedPacing : MonoBehaviour
             timer = 0;
             if (moveDir.x != 0)
             {
+                Vector3 s = transform.localScale;
+                s.x *= -1;
+                transform.localScale = s;
+                //Alternate method to get object to look where it's moving
                 if (moveDir.x == 1)
                 {
-                    GetComponent<SpriteRenderer>().flipX = false;
+                    //GetComponent<SpriteRenderer>().flipX = false;
                 }
                 else
                 {
-                    GetComponent<SpriteRenderer>().flipX = true;
+                    //GetComponent<SpriteRenderer>().flipX = true;
                 }
             }
         }
