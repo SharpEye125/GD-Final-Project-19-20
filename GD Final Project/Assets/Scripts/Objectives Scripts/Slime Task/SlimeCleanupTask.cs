@@ -22,6 +22,7 @@ public class SlimeCleanupTask : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Checks how many slime objects are in scene for tallying
         GameObject[] slimes = GameObject.FindGameObjectsWithTag("Slime");
         foreach (GameObject Slime in slimes)
         {
@@ -32,6 +33,7 @@ public class SlimeCleanupTask : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //Check if the slime object color equals the clean slime color, or if alpha (transparency) is below 3, and that the slime hasn't been cleaned
         if (slime != null && slime.GetComponent<SpriteRenderer>().color == slimeClean && slime.transform.localScale.z != 2 ||
     slime != null && slime.GetComponent<SpriteRenderer>().color.a <= 0.1f && slime.transform.localScale.z != 2)
         {
@@ -40,29 +42,35 @@ public class SlimeCleanupTask : MonoBehaviour
             {
                 slime.GetComponent<ParticleSystem>().Play();
             }
+            //newly cleaned slime gets labelled as clean by setting unseeable Z scale from 1 to 2 to prevent multiple tallies from already clean slimes
             slime.transform.localScale = new Vector3(slime.transform.localScale.x, slime.transform.localScale.y, 2);
             if (slime.GetComponent<BoxCollider2D>().isTrigger == false)
             {
+                //if slime object has a box collider that the player can stand on, turn it off since the slime object is clean
                 slime.SetActive(false);
             }
         }
         if (cleanSlimeCount < slimeCount)
         {
+            //Temporary indicator that not all slime objects are clean
             completion.GetComponent<SpriteRenderer>().color = Color.red;
         }
         else
         {
+            //Temporary indicator that all slime objects are clean
             completion.GetComponent<SpriteRenderer>().color = Color.green;
             //CleanSlimesCheck.clean = true;
             //TasksManager.slimeTask = true;
         }
         if (Input.GetButton("Fire1") && hasMop && GetComponent<PlatformerMove>().grounded == true)
         {
+            //Player starts cleaning/mopping if on the ground and pressing a Fire1 input key
             mopping = true;
             
             
             if (slime != null)
             {
+                //if standing in slime object trigger, start cleaning it by changing its color to slimeClean color
                 slime.GetComponent<SpriteRenderer>().color = Color.Lerp(slime.GetComponent<SpriteRenderer>().color, slimeClean, colorChangeRate);
             }
         }
