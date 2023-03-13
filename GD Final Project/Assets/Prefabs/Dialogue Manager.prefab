@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84245e13a652427448ec42dc5365fbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textSpeed: 0.02
+  textSpeed: 0.05
   nameText: {fileID: 0}
   dialougeText: {fileID: 0}
   portrait: {fileID: 0}
+  voice: {fileID: 0}
+  talking: 0
   animator: {fileID: 0}
