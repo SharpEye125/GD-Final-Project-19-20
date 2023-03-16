@@ -32,7 +32,16 @@ public class ProximityDialogue : MonoBehaviour
         {
             if (distance.magnitude <= talkRange && Input.GetKeyDown(KeyCode.E))
             {
-                GetComponent<DialogueTrigger>().TriggerDialogue();
+                if (GetComponent<DialogueTrigger>() != null)
+                {
+                    Debug.Log("Using normal DT");
+                    GetComponent<DialogueTrigger>().TriggerDialogue();
+                }
+                else
+                {
+                    Debug.Log("Using Conditional DT");
+                    GetComponent<DialogueTriggerConditional>().TriggerDialogue();
+                }
                 hasTalked = true;
                 conversing = true;
             }

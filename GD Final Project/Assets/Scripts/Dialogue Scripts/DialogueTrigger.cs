@@ -7,40 +7,33 @@ public class DialogueTrigger : MonoBehaviour
     [Tooltip("If Enabled: Utilizing firstTalkDialogue's sentences, the character will have an inital set of sentences to speak when first spoked to by the player.")]
     public bool firstInteractDialogue;
     public bool interacted;
-    public bool progressingDialogue;
     //public bool changingExpressions;
+    [Header("Dialogues")]
     public Dialogue dialogue;
-    [Tooltip("The non sentence variables will automatically be set to the normal dialogue variables if not already set.")]
-    public Dialogue firstTalkDialogue;
-    
+    [TextArea(3, 10)]
+    public string[] firstTalkSentences;
+
 
     public void TriggerDialogue()
     {
+        string[] tempDial = dialogue.sentences;
         if (firstInteractDialogue == false || interacted == true)
         {
+            dialogue.sentences = tempDial;
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
         }
         else if (interacted == false)
         {
             interacted = true;
-            FindObjectOfType<DialogueManager>().StartDialogue(firstTalkDialogue);
+            dialogue.sentences = firstTalkSentences;
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            dialogue.sentences = tempDial;
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        if (firstTalkDialogue.name == null)
-        {
-            firstTalkDialogue.name = dialogue.name;
-        }
-        if (firstTalkDialogue.portrait == null)
-        {
-            firstTalkDialogue.portrait = dialogue.portrait;
-        }
-        if (firstTalkDialogue.voice == null)
-        {
-            firstTalkDialogue.voice = dialogue.voice;
-        }
+
     }
 
     // Update is called once per frame
