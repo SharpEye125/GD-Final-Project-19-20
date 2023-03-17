@@ -12,8 +12,10 @@ public class DialogueTriggerConditional : MonoBehaviour
     [TextArea(3, 10)]
     public string[] firstTalkSentences;
 
+    [Space]
     [Header("Progressing Dialogues:")]
     [TextArea(3, 10)]
+    //HeaderAttribute[]
     public string[] slimeTaskDoneSentences;
     [TextArea(3, 10)]
     public string[] slimeTaskDoneSentencesFT;
@@ -32,6 +34,22 @@ public class DialogueTriggerConditional : MonoBehaviour
     public string[] allTasksDoneSentences;
     [TextArea(3, 10)]
     public string[] allTasksDoneSentencesFT;
+    [Header("Inbetween Tasks")]
+    [Space]
+    [TextArea(3, 10)]
+    public string[] necroAndSlimeDone;
+    [TextArea(3, 10)]
+    public string[] necroAndSlimeDoneFT;
+    [TextArea(3, 10)]
+
+    public string[] necroAndBeholderDone;
+    [TextArea(3, 10)]
+    public string[] necroAndBeholderDoneFT;
+    [TextArea(3, 10)]
+
+    public string[] slimeAndBeholderDone;
+    [TextArea(3, 10)]
+    public string[] slimeAndBeholderDoneFT;
 
 
     public void TriggerDialogue()
@@ -52,47 +70,85 @@ public class DialogueTriggerConditional : MonoBehaviour
                 dialogue.sentences = tempDial;
             }
         }
+        else
+        {
+            SetCurrentTaskDialogue(tempDial);
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            dialogue.sentences = tempDial;
+        }
     }
 
-    void SetCurrentTaskDialogue()
+    void SetCurrentTaskDialogue(string[] tempDial)
     {
         if (firstInteractDialogue == false || interacted == true)
         {
-            if (TasksManager.necromancerTask == true)
-            {
-                dialogue.sentences = necroTaskDoneSentences;
-            }
-            if (TasksManager.slimeTask == true)
-            {
-                dialogue.sentences = slimeTaskDoneSentences;
-            }
-            if (TasksManager.beholderTask == true)
-            {
-                dialogue.sentences = beholderTaskDoneSentences;
-            }
             if (TasksManager.necromancerTask == true && TasksManager.slimeTask == true && TasksManager.beholderTask == true)
             {
                 dialogue.sentences = allTasksDoneSentences;
+            }
+            else if (TasksManager.necromancerTask == true && TasksManager.slimeTask == true && TasksManager.beholderTask == false && TasksManager.lastTaskCompleted == "NecroAndSlime")
+            {
+                dialogue.sentences = necroAndSlimeDone;
+            }
+            else if (TasksManager.necromancerTask == true && TasksManager.slimeTask == false && TasksManager.beholderTask == true && TasksManager.lastTaskCompleted == "NecroAndBeholder")
+            {
+                dialogue.sentences = necroAndBeholderDone;
+            }
+            else if (TasksManager.necromancerTask == false && TasksManager.slimeTask == true && TasksManager.beholderTask == true && TasksManager.lastTaskCompleted == "SlimeAndBeholder")
+            {
+                dialogue.sentences = slimeAndBeholderDone;
+            }
+            else if (TasksManager.necromancerTask == true && TasksManager.lastTaskCompleted == "Necromancer")
+            {
+                dialogue.sentences = necroTaskDoneSentences;
+            }
+            else if (TasksManager.slimeTask == true && TasksManager.lastTaskCompleted == "Slime")
+            {
+                dialogue.sentences = slimeTaskDoneSentences;
+            }
+            else if (TasksManager.beholderTask == true && TasksManager.lastTaskCompleted == "Beholder")
+            {
+                dialogue.sentences = beholderTaskDoneSentences;
+            }
+            else if (TasksManager.necromancerTask == false && TasksManager.slimeTask == false && TasksManager.beholderTask == false)
+            {
+                dialogue.sentences = tempDial;
             }
         }
         else if (interacted == false)
         {
             interacted = true;
-            if (TasksManager.necromancerTask == true)
-            {
-                dialogue.sentences = necroTaskDoneSentencesFT;
-            }
-            if (TasksManager.slimeTask == true)
-            {
-                dialogue.sentences = slimeTaskDoneSentencesFT;
-            }
-            if (TasksManager.beholderTask == true)
-            {
-                dialogue.sentences = beholderTaskDoneSentencesFT;
-            }
             if (TasksManager.necromancerTask == true && TasksManager.slimeTask == true && TasksManager.beholderTask == true)
             {
                 dialogue.sentences = allTasksDoneSentencesFT;
+            }
+            else if (TasksManager.necromancerTask == true && TasksManager.slimeTask == true && TasksManager.beholderTask == false && TasksManager.lastTaskCompleted == "NecroAndSlime")
+            {
+                dialogue.sentences = necroAndSlimeDoneFT;
+            }
+            else if (TasksManager.necromancerTask == true && TasksManager.slimeTask == false && TasksManager.beholderTask == true && TasksManager.lastTaskCompleted == "NecroAndBeholder")
+            {
+                dialogue.sentences = necroAndBeholderDoneFT;
+            }
+            else if (TasksManager.necromancerTask == false && TasksManager.slimeTask == true && TasksManager.beholderTask == true && TasksManager.lastTaskCompleted == "SlimeAndBeholder")
+            {
+                dialogue.sentences = slimeAndBeholderDoneFT;
+            }
+            else if (TasksManager.necromancerTask == true && TasksManager.lastTaskCompleted == "Necromancer")
+            {
+                dialogue.sentences = necroTaskDoneSentencesFT;
+            }
+            else if (TasksManager.slimeTask == true && TasksManager.lastTaskCompleted == "Slime")
+            {
+                dialogue.sentences = slimeTaskDoneSentencesFT;
+            }
+            else if (TasksManager.beholderTask == true && TasksManager.lastTaskCompleted == "Beholder")
+            {
+                dialogue.sentences = beholderTaskDoneSentencesFT;
+            }
+            else if (TasksManager.necromancerTask == false && TasksManager.slimeTask == false && TasksManager.beholderTask == false)
+            {
+                dialogue.sentences = firstTalkSentences;
             }
         }
     }

@@ -40036,9 +40036,8 @@ MonoBehaviour:
     voice: {fileID: 0}
     sentences:
     - 'As a reminder of what needs to be done:'
-    - The slimes and their area need to be cleaned, the Necromancer needs help with
-      fresh troops, and the Beholder is having issues finding its contact.
-    - What are you talking to me for? Get to work as soon as possible!
+    - The slimes need to be cleaned, the Necromancer needs help with fresh troops,
+      and the Beholder is having issues finding its contact.
   firstTalkSentences:
   - Hey you! Can you some tasks for me? There's a possible promotion if you do...
   - Thanks for the help, after the last batch of adventurers, we need new troops 
@@ -40063,6 +40062,18 @@ MonoBehaviour:
   - All that's left is to clean the halls
   allTasksDoneSentencesFT:
   - Thank you for completing all the major issues we were having.
+  necroAndSlimeDone:
+  - Just the Beholder needs help now.
+  necroAndSlimeDoneFT:
+  - What?! You've already helped the Necromancer and the slimes? Nice work!
+  necroAndBeholderDone:
+  - Now just the slimes need cleaning
+  necroAndBeholderDoneFT:
+  - What!? You've already helped the Necromancer and Beholder? Nice work!
+  slimeAndBeholderDone:
+  - Now all that's left is to help out the Necromancer.
+  slimeAndBeholderDoneFT:
+  - What?! You've already cleaned the slimes and helped the Beholder? Nice work.
 --- !u!1 &1066580883
 GameObject:
   m_ObjectHideFlags: 0
@@ -40874,7 +40885,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337463235}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 51.356262, y: 6.5048294, z: -9.778434}
+  m_LocalPosition: {x: 50.968414, y: 6.504757, z: -9.778434}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
