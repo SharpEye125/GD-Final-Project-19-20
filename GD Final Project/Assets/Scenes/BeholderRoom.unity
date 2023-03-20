@@ -36576,6 +36576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f364fe8b8de907d49b16f99a10a4e422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserOn: 0
   line: {fileID: 1253991921}
   firePoint: {fileID: 526396519}
   tempTarget: {fileID: 869912072}
@@ -92052,7 +92053,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
