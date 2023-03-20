@@ -78,7 +78,9 @@ public class BeholderLaser : MonoBehaviour
         {
             var ps = startFX.transform.GetChild(i).GetComponent<ParticleSystem>();
             if (ps != null)
+            {
                 particles.Add(ps);
+            }
         }
         for (int i = 0; i < endFX.transform.childCount; i++)
         {
