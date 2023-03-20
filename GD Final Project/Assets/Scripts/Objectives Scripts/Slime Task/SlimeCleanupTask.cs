@@ -84,7 +84,7 @@ public class SlimeCleanupTask : MonoBehaviour
         if (mopping)
         {
             //play mopping particles
-            if (mopPrefab.GetComponent<ParticleSystem>().isPlaying == false)
+            if (mopPrefab.GetComponent<ParticleSystem>().isEmitting == false)
             {
                 mopPrefab.GetComponent<ParticleSystem>().Play();
             }
@@ -94,7 +94,7 @@ public class SlimeCleanupTask : MonoBehaviour
         else
         {
             //stop emitting mopping particles
-            if (mopPrefab.GetComponent<ParticleSystem>().isPlaying)
+            if (mopPrefab.GetComponent<ParticleSystem>().isEmitting)
             {
                 mopPrefab.GetComponent<ParticleSystem>().Stop();
             }
@@ -126,5 +126,9 @@ public class SlimeCleanupTask : MonoBehaviour
             //remove slime from current slime object variable
             slime = null;
         }
+    }
+    void UpdateParticles()
+    {
+
     }
 }

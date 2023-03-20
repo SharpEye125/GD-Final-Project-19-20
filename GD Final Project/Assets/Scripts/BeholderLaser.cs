@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BeholderLaser : MonoBehaviour
 {
+    public bool laserOn;
     public LineRenderer line;
     public Transform firePoint;
     public Transform tempTarget;
@@ -12,7 +13,7 @@ public class BeholderLaser : MonoBehaviour
     public GameObject endFX;
 
     private Quaternion rotation;
-    private List<ParticleSystem> particles;
+    private List<ParticleSystem> particles = new List<ParticleSystem>();
     //public LayerMask playerLayer;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,14 @@ public class BeholderLaser : MonoBehaviour
     void Update()
     {
         UpdateLaser();
+        if (laserOn)
+        {
+            EnableLaser();
+        }
+        else
+        {
+            DisableLaser();
+        }
     }
 
     void EnableLaser()
@@ -32,7 +41,10 @@ public class BeholderLaser : MonoBehaviour
         line.enabled = true;
         for(int i=0; i<particles.Count; i++)
         {
-            particles[i].Play();
+            if (particles[i].isEmitting == false)
+            {
+                particles[i].Play();
+            }
         }
     }
     void DisableLaser()
@@ -40,7 +52,10 @@ public class BeholderLaser : MonoBehaviour
         line.enabled = false;
         for (int i = 0; i < particles.Count; i++)
         {
-            particles[i].Stop();
+            if (particles[i].isEmitting == true)
+            {
+                particles[i].Stop();
+            }
         }
     }
     void UpdateLaser()
