@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlatformerMove : MonoBehaviour
 {
+    //public float speedGainRate = 0.05f;
     //public AudioClip jumpSFX;
     public AudioSource jumpSFXPlayer;
     public float moveSpeed = 1.0f;
@@ -35,6 +36,47 @@ public class PlatformerMove : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        float moveX = Input.GetAxis("Horizontal");
+        velocity = GetComponent<Rigidbody2D>().velocity;
+        PlayerMove();
+        if (velocity.y <= maxFallSpeed)
+        {
+            //if falling at maxFallSpeed velocity keep velocity at maxSpeed and allow for fallStun
+            velocity.y = maxFallSpeed;
+            receiveFallStun = true;
+        }
+        else
+        {
+            receiveFallStun = false;
+        }
+        
+        
+        if (Input.GetButtonDown("Jump") && jumpCount < maxJumps && fallStun == false)// && grounded)
+        {
+            Jump();
+            jumpSFXPlayer.Play();
+        }
+        ChangePlayerDirection();
+    }
+    public void Jump()
+    {
+        if (!grounded)
+        {
+            jumpCount++;
+        }
+        if (GetComponent<LadderClimb>().climbing)
+        {
+            GetComponent<LadderClimb>().timer = 0;
+        }
+
+        GetComponent<LadderClimb>().GetOffLadder();
+
+        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0f);
+        GetComponent<Rigidbody2D>().AddForce
+            (new Vector2(0, 100 * jumpSpeed));
+    }
+    void PlayerMove()
     {
         float moveX = Input.GetAxis("Horizontal");
         velocity = GetComponent<Rigidbody2D>().velocity;
@@ -72,24 +114,12 @@ public class PlatformerMove : MonoBehaviour
             velocity.x = moveSpeed * moveX;
             UpdateAnimVars();
         }
-        if (velocity.y <= maxFallSpeed)
-        {
-            //if falling at maxFallSpeed velocity keep velocity at maxSpeed and allow for fallStun
-            velocity.y = maxFallSpeed;
-            receiveFallStun = true;
-        }
-        else
-        {
-            receiveFallStun = false;
-        }
         GetComponent<Rigidbody2D>().velocity = velocity;
-        
-        if (Input.GetButtonDown("Jump") && jumpCount < maxJumps && fallStun == false)// && grounded)
-        {
-            Jump();
-            jumpSFXPlayer.Play();
-        }
-        
+        //GetComponent<Rigidbody2D>().velocity = Vector2.Lerp(GetComponent<Rigidbody2D>().velocity, velocity, speedGainRate);
+
+    }
+    void ChangePlayerDirection()
+    {
         float x = Input.GetAxisRaw("Horizontal");
 
         //Turn player to correct direction
@@ -110,23 +140,6 @@ public class PlatformerMove : MonoBehaviour
             transform.localScale = s;
             //GetComponent<SpriteRenderer>().flipX = true;
         }
-    }
-    public void Jump()
-    {
-        if (!grounded)
-        {
-            jumpCount++;
-        }
-        if (GetComponent<LadderClimb>().climbing)
-        {
-            GetComponent<LadderClimb>().timer = 0;
-        }
-
-        GetComponent<LadderClimb>().GetOffLadder();
-
-        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0f);
-        GetComponent<Rigidbody2D>().AddForce
-            (new Vector2(0, 100 * jumpSpeed));
     }
     public void UpdateAnimVars()
     {
