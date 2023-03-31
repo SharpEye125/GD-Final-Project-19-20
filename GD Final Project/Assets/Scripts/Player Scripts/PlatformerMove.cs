@@ -21,8 +21,10 @@ public class PlatformerMove : MonoBehaviour
     float fallStunTimer = 0;
     bool receiveFallStun = false;
     bool fallStun = false;
-    
 
+    bool funHover = false;
+
+    float tempGravity;
     public Animator anim;
     public Vector2 velocity;
     
@@ -52,7 +54,6 @@ public class PlatformerMove : MonoBehaviour
             receiveFallStun = false;
         }
         
-        
         if (Input.GetButtonDown("Jump") && jumpCount < maxJumps && fallStun == false)// && grounded)
         {
             Jump();
@@ -81,6 +82,10 @@ public class PlatformerMove : MonoBehaviour
     {
         float moveX = Input.GetAxis("Horizontal");
         velocity = GetComponent<Rigidbody2D>().velocity;
+        if (GetComponent<Rigidbody2D>().gravityScale != 0)
+        {
+            tempGravity = GetComponent<Rigidbody2D>().gravityScale;
+        }
         if (fallStun)
         {
             //Activates fallStun effects and duration timer
@@ -114,6 +119,21 @@ public class PlatformerMove : MonoBehaviour
             //Walk moveSpeed
             velocity.x = moveSpeed * moveX;
             UpdateAnimVars();
+        }
+        if (funHover == true)
+        {
+            if (grounded == false && GetComponent<LadderClimb>().climbing == false && Input.GetButton("Jump") && GetComponent<Rigidbody2D>().velocity.y < 1)
+            {
+                GetComponent<BetterJumping>().enabled = false;
+                velocity.y = 0;
+                GetComponent<Rigidbody2D>().gravityScale = -0.1f;
+            }
+            else
+            {
+                Debug.Log("No hover");
+                GetComponent<BetterJumping>().enabled = true;
+                GetComponent<Rigidbody2D>().gravityScale = tempGravity;
+            }
         }
         GetComponent<Rigidbody2D>().velocity = velocity;
         //GetComponent<Rigidbody2D>().velocity = Vector2.Lerp(GetComponent<Rigidbody2D>().velocity, velocity, speedGainRate);
