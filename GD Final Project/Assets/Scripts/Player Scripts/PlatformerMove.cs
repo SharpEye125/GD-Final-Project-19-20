@@ -21,6 +21,7 @@ public class PlatformerMove : MonoBehaviour
     float fallStunTimer = 0;
     bool receiveFallStun = false;
     bool fallStun = false;
+    
 
     public Animator anim;
     public Vector2 velocity;
@@ -146,6 +147,7 @@ public class PlatformerMove : MonoBehaviour
         anim.SetBool("grounded", grounded);
         anim.SetFloat("x", velocity.x);
         anim.SetFloat("y", velocity.y);
+        anim.SetBool("stunned", fallStun);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -156,7 +158,15 @@ public class PlatformerMove : MonoBehaviour
             {
                 //If landed at maxFallSpeed start fall stun
                 fallStun = true;
+                
                 anim.SetBool("landed", fallStun);
+                anim.SetBool("stunned", fallStun);
+            }
+            else
+            {
+                anim.SetBool("stunned", fallStun);
+                //anim.SetBool("landed", fallStun);
+                anim.SetTrigger("landed");
             }
             //anim.SetTrigger("landed");
             jumpCount = 0;
