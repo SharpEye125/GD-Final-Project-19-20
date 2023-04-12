@@ -357,6 +357,7 @@ MonoBehaviour:
   player: {fileID: 968333042}
   hasTalked: 0
   waitTime: 3
+  conversing: 0
 --- !u!114 &237943696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a7f3b42712a2f488f9596fd277c855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstInteractDialogue: 0
+  interacted: 0
   dialogue:
     name: SkeleTrainer
     portrait: {fileID: -316082746, guid: 0ccae2f5dbe63a1479e1a55b5d316283, type: 3}
@@ -382,6 +385,7 @@ MonoBehaviour:
     - OKAY FINE, I'll let you in on something if you haven't found it out already.
     - You can press the SHIFT key to run. Just be sure to not do it holding scissors,
       someone could get hurt! HAH as if, we're already undead!
+  firstTalkSentences: []
 --- !u!95 &237943697
 Animator:
   serializedVersion: 5
@@ -520,6 +524,7 @@ MonoBehaviour:
   player: {fileID: 968333042}
   hasTalked: 0
   waitTime: 3
+  conversing: 0
 --- !u!114 &316778874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,6 +537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a7f3b42712a2f488f9596fd277c855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstInteractDialogue: 0
+  interacted: 0
   dialogue:
     name: SkeleTrainer
     portrait: {fileID: -316082746, guid: 0ccae2f5dbe63a1479e1a55b5d316283, type: 3}
@@ -541,6 +548,7 @@ MonoBehaviour:
     - 'Lesson 3:  Getting Around.'
     - Press E on interactables like Doors or Ladder Wells to get to the other end
       of them.
+  firstTalkSentences: []
 --- !u!95 &316778875
 Animator:
   serializedVersion: 5
@@ -1538,6 +1546,7 @@ MonoBehaviour:
   player: {fileID: 968333042}
   hasTalked: 0
   waitTime: 3
+  conversing: 0
 --- !u!114 &581143183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1550,6 +1559,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a7f3b42712a2f488f9596fd277c855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstInteractDialogue: 0
+  interacted: 0
   dialogue:
     name: SkeleTrainer
     portrait: {fileID: -316082746, guid: 0ccae2f5dbe63a1479e1a55b5d316283, type: 3}
@@ -1558,6 +1569,7 @@ MonoBehaviour:
     - Congratulations, you just completed the training course.
     - Now go and get a move on, press E on that orb pedestal to reach the Main Hall
       which connects to every part of this dungeon.
+  firstTalkSentences: []
 --- !u!95 &581143184
 Animator:
   serializedVersion: 5
@@ -1696,6 +1708,7 @@ MonoBehaviour:
   player: {fileID: 968333042}
   hasTalked: 0
   waitTime: 3
+  conversing: 0
 --- !u!114 &656124342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1708,6 +1721,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a7f3b42712a2f488f9596fd277c855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstInteractDialogue: 0
+  interacted: 0
   dialogue:
     name: SkeleTrainer
     portrait: {fileID: -316082746, guid: 0ccae2f5dbe63a1479e1a55b5d316283, type: 3}
@@ -1719,6 +1734,7 @@ MonoBehaviour:
     - Reapers are always on patrol in various places for security.
     - But if you touch them, whether friend or foe, they will kill you. So stay clear
       and let them do their thing.
+  firstTalkSentences: []
 --- !u!95 &656124343
 Animator:
   serializedVersion: 5
@@ -1857,6 +1873,7 @@ MonoBehaviour:
   player: {fileID: 968333042}
   hasTalked: 0
   waitTime: 3
+  conversing: 0
 --- !u!114 &699674566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1869,6 +1886,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a7f3b42712a2f488f9596fd277c855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstInteractDialogue: 0
+  interacted: 0
   dialogue:
     name: SkeleTrainer
     portrait: {fileID: -316082746, guid: 0ccae2f5dbe63a1479e1a55b5d316283, type: 3}
@@ -1878,6 +1897,7 @@ MonoBehaviour:
     - Our platforms allow you to jump onto them from directly underneath and to jump
       off them. Press S to jump off of platforms.
     - Go ahead and give it a try.
+  firstTalkSentences: []
 --- !u!95 &699674567
 Animator:
   serializedVersion: 5
@@ -39555,6 +39575,7 @@ MonoBehaviour:
   player: {fileID: 968333042}
   hasTalked: 0
   waitTime: 3
+  conversing: 0
 --- !u!212 &622329301891084373
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -138183,6 +138204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a7f3b42712a2f488f9596fd277c855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstInteractDialogue: 0
+  interacted: 0
   dialogue:
     name: SkeleTrainer
     portrait: {fileID: -316082746, guid: 0ccae2f5dbe63a1479e1a55b5d316283, type: 3}
@@ -138191,6 +138214,7 @@ MonoBehaviour:
     - So you're the new guy?
     - Good, because I'm here to train you on the do's and don'ts here.
     - Walk on ahead for your first lesson
+  firstTalkSentences: []
 --- !u!114 &9095623556714194683
 MonoBehaviour:
   m_ObjectHideFlags: 0
