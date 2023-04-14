@@ -71,7 +71,7 @@ public class BeholderLaser : MonoBehaviour
         transform.rotation = rotation;
 
         //RaycastHit2D hitPlayer = Physics2D.Raycast(transform.position, direction.normalized, direction.magnitude, playerLayer);
-        if (hit)
+        if (hit && laserOn)
         {
             line.SetPosition(1, hit.point);
             //Debug.Log("Hit " + hit.point);

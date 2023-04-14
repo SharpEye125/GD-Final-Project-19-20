@@ -25980,7 +25980,7 @@ GameObject:
   - component: {fileID: 834921319}
   - component: {fileID: 834921318}
   - component: {fileID: 834921317}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Slime Mess (1)
   m_TagString: Slime
   m_Icon: {fileID: 0}
@@ -25995,8 +25995,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834921315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.46, y: 1.29, z: 0.10322832}
-  m_LocalScale: {x: 3.35, y: 1, z: 1}
+  m_LocalPosition: {x: -7.32, y: -16.09, z: 0.10322832}
+  m_LocalScale: {x: 2.2, y: 4.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1879233348}
@@ -26015,7 +26015,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: 0.125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -26026,7 +26026,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 1.25}
   m_EdgeRadius: 0
 --- !u!114 &834921318
 MonoBehaviour:
@@ -26050,7 +26050,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 834921315}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 49dcbe17ded0bbd43a6fbc98bfbbcc00, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -26110,7 +26110,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_Color: {r: 0.6156863, g: 1, b: 0.2784314, a: 1}
+  m_Color: {r: 0.6156863, g: 1, b: 0.2784314, a: 0.92156863}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -31378,7 +31378,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_Color: {r: 0.6156863, g: 1, b: 0.2784314, a: 1}
+  m_Color: {r: 0.6156863, g: 1, b: 0.2784314, a: 0.72156864}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -36470,7 +36470,7 @@ GameObject:
   - component: {fileID: 1270941319}
   m_Layer: 12
   m_Name: Platforms (1)
-  m_TagString: 2Way
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36630,7 +36630,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
