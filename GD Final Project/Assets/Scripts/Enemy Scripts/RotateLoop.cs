@@ -27,7 +27,7 @@ public class RotateLoop : MonoBehaviour
                 if (reversing == true)
                 {
                     t.z -= rotateRate;
-                    if (t.z <= startingAngle - maxRotationAngle)
+                    if (t.z <= startingAngle && t.z > 0)
                     {
                         reversing = false;
                     }
@@ -35,7 +35,7 @@ public class RotateLoop : MonoBehaviour
                 else
                 {
                     t.z += rotateRate;
-                    if (t.z >= maxRotationAngle)
+                    if (t.z >= maxRotationAngle && t.z > 0)
                     {
                         reversing = true;
                     }

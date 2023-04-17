@@ -28,13 +28,10 @@ public class BeholderTask : MonoBehaviour
         bool pDead = player.GetComponent<PlayerDie>().dead;
         Vector2 playerDistance = new Vector2(transform.position.x - player.position.x, transform.position.y - player.position.y);
         Vector2 beholderDistance = new Vector2(player.position.x - beholder.position.x, player.position.y - beholder.position.y);
-        //pD = playerDistance.magnitude;
-        //bD = beholderDistance.magnitude;
         if (pDead == true)
         {
             hasLens = false;
             GetComponent<SpriteRenderer>().enabled = true;
-            //transform.position = startingPos;
         }
         if (beholderDistance.magnitude <= beholderRange && Input.GetKeyDown(KeyCode.E) && pDead == false)
         {
