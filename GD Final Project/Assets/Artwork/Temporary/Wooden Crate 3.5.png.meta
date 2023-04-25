@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bccfa7dc41192ae46b907496d6e68f49
+guid: 17c03f1b803170444b72f4e1dfd229b4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,112 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Storage Room Decorations_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7860e8af71ec614fa6f39a62fe66dc4
-      internalID: 363821265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Storage Room Decorations_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d63c16b0d82455341984d3266bf81cc7
-      internalID: -220573481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Storage Room Decorations_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 661fa6a09bfca504b89fd3d00bdb5fe5
-      internalID: 1358012048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Storage Room Decorations_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb676dc45ec053746853a3368a19f8a2
-      internalID: 374527775
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Storage Room Decorations_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8cc134d683c0b444a95d5f8b61360164
-      internalID: -1910795564
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Storage Room Decorations_5
+      name: Wooden Crate 3.5_0
       rect:
         serializedVersion: 2
         x: 0
@@ -224,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78a83e0e719da8e448db248047fd366c
-      internalID: -2018994932
+      spriteID: 00ad78fa7069b8f4faaaea5478429074
+      internalID: 1613402979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Storage Room Decorations_6
+      name: Wooden Crate 3.5_1
       rect:
         serializedVersion: 2
         x: 32
@@ -245,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5c6ffe8413217a478a7b876f7a059c1
-      internalID: -1432777837
+      spriteID: af6335e03b719844da430149ff10d4f5
+      internalID: -1765203617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Storage Room Decorations_7
+      name: Wooden Crate 3.5_2
       rect:
         serializedVersion: 2
         x: 64
@@ -266,56 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5d96f61dcb483d4aa5509bda6c986c4
-      internalID: 340763498
+      spriteID: c884ba65ca995eb4bbe741d6285620af
+      internalID: 3299277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Storage Room Decorations_8
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02fece97e15b72843b97c395b6092e5f
-      internalID: 477729530
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Storage Room Decorations_9
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a0dccef0357d1c459de248153d5c780
-      internalID: 116608568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Storage Room Decorations_10
+      name: Wooden Crate 3.5_3
       rect:
         serializedVersion: 2
         x: 0
@@ -329,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 485ee41398d37004195cfd8b9602ebf4
-      internalID: 873700097
+      spriteID: 65ad14f06419d09408f88251f958b133
+      internalID: -667063097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Storage Room Decorations_11
+      name: Wooden Crate 3.5_4
       rect:
         serializedVersion: 2
         x: 32
@@ -350,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e8528cafe3a17c41b0c70c3c3a38a03
-      internalID: -2082266122
+      spriteID: 3b4a783a16ba48f40826c2568e4b923a
+      internalID: 300027406
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Storage Room Decorations_12
+      name: Wooden Crate 3.5_5
       rect:
         serializedVersion: 2
         x: 64
@@ -371,56 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b998f997debd4384f9cbf3d21ae6bdce
-      internalID: 954031024
+      spriteID: 638c1f04c17a21f4f8e9cbfbc38acd8a
+      internalID: 810440077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Storage Room Decorations_13
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3257c47e0b129694189dbb8f3b314850
-      internalID: 907299249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Storage Room Decorations_14
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14521e52828c57f45a84ad72cf149929
-      internalID: -405307064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Storage Room Decorations_15
+      name: Wooden Crate 3.5_6
       rect:
         serializedVersion: 2
         x: 0
@@ -434,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 995d6a8a3e4388c4e827d3fc817065f2
-      internalID: 1940987768
+      spriteID: 21e61788018099f4987f906fcbc5a0d4
+      internalID: -306990397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Storage Room Decorations_16
+      name: Wooden Crate 3.5_7
       rect:
         serializedVersion: 2
         x: 32
@@ -455,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3acbda12d6539864d9e62218c94b38ca
-      internalID: 1672667951
+      spriteID: 717fc37e842faea40b346b280ff0feab
+      internalID: 677122363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Storage Room Decorations_17
+      name: Wooden Crate 3.5_8
       rect:
         serializedVersion: 2
         x: 64
@@ -476,56 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e56fdd508da6a74c858e4d381c400ea
-      internalID: -287076811
+      spriteID: bc599f3a1df4180469f3cf9674d38384
+      internalID: -1427215209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Storage Room Decorations_18
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8fb45704d3a83f8429c45eff3d8ea21d
-      internalID: -494639484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Storage Room Decorations_19
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54e5c6a99f72eaf43b957e64c70fcb33
-      internalID: 288632275
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Storage Room Decorations_20
+      name: Wooden Crate 3.5_9
       rect:
         serializedVersion: 2
         x: 0
@@ -539,8 +308,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae6c2f17da911a042b3051c399f332b0
-      internalID: 1200545892
+      spriteID: c68d55359a52dfc4d8f7e9a339a147c9
+      internalID: -1613257025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Crate 3.5_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40921677cb7ccd4d99c2bd8217fe58f
+      internalID: -149153602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wooden Crate 3.5_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfcadc6795e5b12469b05310063de10d
+      internalID: 1191877179
       vertices: []
       indices: 
       edges: []
@@ -556,27 +367,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Storage Room Decorations_9: 116608568
-      Storage Room Decorations_11: -2082266122
-      Storage Room Decorations_16: 1672667951
-      Storage Room Decorations_18: -494639484
-      Storage Room Decorations_2: 1358012048
-      Storage Room Decorations_6: -1432777837
-      Storage Room Decorations_0: 363821265
-      Storage Room Decorations_19: 288632275
-      Storage Room Decorations_14: -405307064
-      Storage Room Decorations_12: 954031024
-      Storage Room Decorations_8: 477729530
-      Storage Room Decorations_13: 907299249
-      Storage Room Decorations_17: -287076811
-      Storage Room Decorations_3: 374527775
-      Storage Room Decorations_15: 1940987768
-      Storage Room Decorations_4: -1910795564
-      Storage Room Decorations_7: 340763498
-      Storage Room Decorations_1: -220573481
-      Storage Room Decorations_5: -2018994932
-      Storage Room Decorations_10: 873700097
-      Storage Room Decorations_20: 1200545892
+      Wooden Crate 3.5_9: -1613257025
+      Wooden Crate 3.5_8: -1427215209
+      Wooden Crate 3.5_11: 1191877179
+      Wooden Crate 3.5_6: -306990397
+      Wooden Crate 3.5_0: 1613402979
+      Wooden Crate 3.5_1: -1765203617
+      Wooden Crate 3.5_7: 677122363
+      Wooden Crate 3.5_10: -149153602
+      Wooden Crate 3.5_4: 300027406
+      Wooden Crate 3.5_5: 810440077
+      Wooden Crate 3.5_2: 3299277
+      Wooden Crate 3.5_3: -667063097
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
