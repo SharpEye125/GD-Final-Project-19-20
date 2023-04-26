@@ -49,6 +49,10 @@ public class SlimeCleanupTask : MonoBehaviour
                 //if slime object has a box collider that the player can stand on, turn it off since the slime object is clean
                 slime.SetActive(false);
             }
+            if (slime.GetComponent<SlimePacing>() != null)
+            {
+                slime.GetComponent<SlimePacing>().enabled = true;
+            }
         }
         if (cleanSlimeCount < slimeCount)
         {

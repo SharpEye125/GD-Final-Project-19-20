@@ -9,6 +9,7 @@ public class PlatformerMove : MonoBehaviour
     public AudioSource jumpSFXPlayer;
     public float moveSpeed = 1.0f;
     public float runSpeed = 2f;
+    float minMoveX = 0.2f;
 
     public float jumpSpeed = 1.0f;
     public int maxJumps = 2;
@@ -41,6 +42,7 @@ public class PlatformerMove : MonoBehaviour
     void Update()
     {
         float moveX = Input.GetAxis("Horizontal");
+        //Debug.Log(moveX);
         velocity = GetComponent<Rigidbody2D>().velocity;
         PlayerMove();
         if (velocity.y <= maxFallSpeed)
@@ -81,6 +83,11 @@ public class PlatformerMove : MonoBehaviour
     void PlayerMove()
     {
         float moveX = Input.GetAxis("Horizontal");
+        //Debug.Log(moveX);
+        if (moveX < 0 && moveX > -minMoveX || moveX > 0 && moveX < minMoveX)
+        {
+            moveX = 0;
+        }
         velocity = GetComponent<Rigidbody2D>().velocity;
         if (GetComponent<Rigidbody2D>().gravityScale != 0)
         {
