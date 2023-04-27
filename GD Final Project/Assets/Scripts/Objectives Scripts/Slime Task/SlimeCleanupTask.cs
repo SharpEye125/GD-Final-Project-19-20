@@ -18,6 +18,7 @@ public class SlimeCleanupTask : MonoBehaviour
     //public Color slimeNorm;
     public Color slimeClean;
     public GameObject completion;
+    public Animator playerAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +50,7 @@ public class SlimeCleanupTask : MonoBehaviour
                 //if slime object has a box collider that the player can stand on, turn it off since the slime object is clean
                 slime.SetActive(false);
             }
-            if (slime.GetComponent<SlimePacing>() != null)
+            if (slime.GetComponent<SlimePacing>() != null && slime.GetComponent<SlimePacing>() == true)
             {
                 slime.GetComponent<SlimePacing>().enabled = true;
             }
@@ -66,7 +67,7 @@ public class SlimeCleanupTask : MonoBehaviour
             //CleanSlimesCheck.clean = true;
             //TasksManager.slimeTask = true;
         }
-        if (Input.GetButton("Fire1") && hasMop && GetComponent<PlatformerMove>().grounded == true)
+        if (Input.GetButton("Fire1") && hasMop && GetComponentInParent<PlatformerMove>().grounded == true)
         {
             //Player starts cleaning/mopping if on the ground and pressing a Fire1 input key
             mopping = true;
@@ -104,7 +105,7 @@ public class SlimeCleanupTask : MonoBehaviour
             }
             mopPrefab.GetComponent<TrailRenderer>().emitting = false;
         }
-        GetComponent<Animator>().SetBool("mopping", mopping);
+        playerAnimator.SetBool("mopping", mopping);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

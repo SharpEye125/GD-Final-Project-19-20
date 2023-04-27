@@ -9,7 +9,7 @@ public class ProximityBroomPickup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = FindObjectOfType<PlatformerMove>().transform;
     }
 
     // Update is called once per frame
@@ -19,14 +19,14 @@ public class ProximityBroomPickup : MonoBehaviour
         if (distance.magnitude <= pickupRange && Input.GetKeyDown(KeyCode.E) && player.gameObject.GetComponent<PlatformerMove>().grounded == true)
         {
             //Debug.Log(distance.magnitude);
-            if (player.GetComponent<SlimeCleanupTask>().hasMop == true)
+            if (player.GetComponentInChildren<SlimeCleanupTask>().hasMop == true)
             {
-                player.GetComponent<SlimeCleanupTask>().hasMop = false;
+                player.GetComponentInChildren<SlimeCleanupTask>().hasMop = false;
                 GetComponent<SpriteRenderer>().enabled = true;
             }
             else
             {
-                player.GetComponent<SlimeCleanupTask>().hasMop = true;
+                player.GetComponentInChildren<SlimeCleanupTask>().hasMop = true;
                 GetComponent<SpriteRenderer>().enabled = false;
             }
             

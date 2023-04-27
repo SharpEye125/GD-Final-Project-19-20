@@ -9,7 +9,7 @@ public class PlatformerMove : MonoBehaviour
     public AudioSource jumpSFXPlayer;
     public float moveSpeed = 1.0f;
     public float runSpeed = 2f;
-    float minMoveX = 0.2f;
+    public float minMoveX = 0.2f;
 
     public float jumpSpeed = 1.0f;
     public int maxJumps = 2;
@@ -109,10 +109,10 @@ public class PlatformerMove : MonoBehaviour
                 anim.SetBool("landed", fallStun);
             }
         }
-        else if (GetComponent<SlimeCleanupTask>() != null && GetComponent<SlimeCleanupTask>().mopping == true)
+        else if (GetComponentInChildren<SlimeCleanupTask>() != null && GetComponentInChildren<SlimeCleanupTask>().mopping == true)
         {
             //When mopping use mopSpeed
-            velocity.x = GetComponent<SlimeCleanupTask>().mopSpeed * moveX;
+            velocity.x = GetComponentInChildren<SlimeCleanupTask>().mopSpeed * moveX;
             UpdateAnimVars();
         }
         else if (Input.GetButton("Sprint"))
