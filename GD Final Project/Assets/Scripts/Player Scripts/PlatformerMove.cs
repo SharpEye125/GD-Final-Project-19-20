@@ -23,7 +23,7 @@ public class PlatformerMove : MonoBehaviour
     bool receiveFallStun = false;
     bool fallStun = false;
 
-    bool funHover = false;
+    [SerializeField] bool funHover = false;
 
     float tempGravity;
     public Animator anim;

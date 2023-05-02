@@ -38,7 +38,17 @@ public class PlayerDie : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            dead = true;
+            if (collision.GetComponent<EnemyHealth>() == true)
+            {
+                if (collision.GetComponent<EnemyHealth>().currentHealth >= 0)
+                {
+                    dead = true;
+                }
+            }
+            else
+            {
+                dead = true;
+            }
             
             //sample code for grabbing the death animation from a specific enemy type: (don't forget to uncomment deathAnim)
             //deathAnim = collision.GetComponent<EnemyType>().killAnim;
