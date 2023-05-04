@@ -111,11 +111,12 @@ public class PlatformerMove : MonoBehaviour
         }
         else if (GetComponentInChildren<SlimeCleanupTask>() != null && GetComponentInChildren<SlimeCleanupTask>().mopping == true)
         {
+            if (GetComponent<PlayerCombat>() != null && GetComponent<PlayerCombat>().attackMode == false)
             //When mopping use mopSpeed
             velocity.x = GetComponentInChildren<SlimeCleanupTask>().mopSpeed * moveX;
             UpdateAnimVars();
         }
-        else if (Input.GetButton("Sprint"))
+        else if (Input.GetButton("Sprint") && GetComponent<PlayerCombat>().attackMode == false)
         {
             //Debug.Log("Running!");
             velocity.x = runSpeed * moveX;
