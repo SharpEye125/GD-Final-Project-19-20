@@ -116,6 +116,11 @@ public class PlatformerMove : MonoBehaviour
             velocity.x = GetComponentInChildren<SlimeCleanupTask>().mopSpeed * moveX;
             UpdateAnimVars();
         }
+        else if (Time.time <= GetComponent<PlayerCombat>().nextAttackTime - 0.25)
+        {
+            velocity.x = 1f * moveX;
+            UpdateAnimVars();
+        }
         else if (Input.GetButton("Sprint") && GetComponent<PlayerCombat>().attackMode == false)
         {
             //Debug.Log("Running!");

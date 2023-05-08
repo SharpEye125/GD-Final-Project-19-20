@@ -9,7 +9,8 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public int attackDamage = 3;
     public float attackRate = 2f;
-    float nextAttackTime = 0;
+
+    public float nextAttackTime = 0;
 
     public Transform attackPoint;
     public LayerMask enemyLayers;
@@ -24,20 +25,22 @@ public class PlayerCombat : MonoBehaviour
     void Update()
     {
         anim.SetBool("attackMode", attackMode);
-        if (Input.GetKeyDown(KeyCode.F) && attackMode == false)
+        if (Input.GetKeyDown(KeyCode.F) && attackMode == false && GetComponent<PlatformerMove>().grounded)
         {
             attackMode = true;
+            nextAttackTime = Time.time + 1 / attackRate;
         }
-        else if (Input.GetKeyDown(KeyCode.F) && attackMode == true)
+        else if (Input.GetKeyDown(KeyCode.F) && attackMode == true && GetComponent<PlatformerMove>().grounded)
         {
             attackMode = false;
+            nextAttackTime = Time.time + 1 / attackRate;
         }
         if (attackMode)
         {
             if (Time.time >= nextAttackTime)
             {
                 //Input.GetKeyDown(KeyCode.Mouse0)
-                if (Input.GetButtonDown("Fire1") && FindObjectOfType<PlatformerMove>().grounded)
+                if (Input.GetButtonDown("Fire1") && GetComponent<PlatformerMove>().grounded)
                 {
                     Attack();
                     nextAttackTime = Time.time + 1 / attackRate;
