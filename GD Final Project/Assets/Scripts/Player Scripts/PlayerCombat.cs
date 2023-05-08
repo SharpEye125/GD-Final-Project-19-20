@@ -25,12 +25,12 @@ public class PlayerCombat : MonoBehaviour
     void Update()
     {
         anim.SetBool("attackMode", attackMode);
-        if (Input.GetKeyDown(KeyCode.F) && attackMode == false && GetComponent<PlatformerMove>().grounded)
+        if (Input.GetKey(KeyCode.F) && Time.time >= nextAttackTime - 0.25f &&  attackMode == false && GetComponent<PlatformerMove>().grounded)
         {
             attackMode = true;
             nextAttackTime = Time.time + 1 / attackRate;
         }
-        else if (Input.GetKeyDown(KeyCode.F) && attackMode == true && GetComponent<PlatformerMove>().grounded)
+        else if (Input.GetKey(KeyCode.F) && Time.time >= nextAttackTime - 0.25f && attackMode == true && GetComponent<PlatformerMove>().grounded)
         {
             attackMode = false;
             nextAttackTime = Time.time + 1 / attackRate;
@@ -42,6 +42,7 @@ public class PlayerCombat : MonoBehaviour
                 //Input.GetKeyDown(KeyCode.Mouse0)
                 if (Input.GetButtonDown("Fire1") && GetComponent<PlatformerMove>().grounded)
                 {
+                    Debug.Log("Attacked");
                     Attack();
                     nextAttackTime = Time.time + 1 / attackRate;
                 }
