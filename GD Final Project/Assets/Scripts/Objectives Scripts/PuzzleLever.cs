@@ -5,12 +5,11 @@ using UnityEngine;
 public class PuzzleLever : MonoBehaviour
 {
     public bool isActive = false;
-    public bool puzzleObjStartActive = false;
     public float interactRange = 1;
 
     Animator anim;
     Transform player;
-    public GameObject puzzleObject;
+    public GameObject[] puzzleObject;
 
     // Start is called before the first frame update
     void Start()
@@ -24,48 +23,55 @@ public class PuzzleLever : MonoBehaviour
     {
         PlayerInteractCheck();
 
-        if (isActive)
-        {
-            anim.SetBool("isActive", isActive);
-            if (puzzleObjStartActive)
-            {
-                puzzleObject.SetActive(false);
-            }
-            else
-            {
-                puzzleObject.SetActive(true);
-            }
-            
-
-        }
-        else
-        {
-            anim.SetBool("isActive", isActive);
-            if (puzzleObjStartActive)
-            {
-                puzzleObject.SetActive(true);
-            }
-            else
-            {
-                puzzleObject.SetActive(false);
-            }
-
-        }
     }
     public void PlayerInteractCheck()
     {
         Vector2 distance = new Vector2(transform.position.x - player.position.x, transform.position.y - player.position.y);
-        if (distance.magnitude <= interactRange && Input.GetKeyDown(KeyCode.E) && player.gameObject.GetComponent<PlatformerMove>().grounded == true)
+        if (distance.magnitude <= interactRange && Input.GetKeyDown(KeyCode.E))// && player.gameObject.GetComponent<PlatformerMove>().grounded == true)
         {
             if (isActive)
             {
                 isActive = false;
+                anim.SetBool("isActive", isActive);
+                foreach (GameObject puzzle in puzzleObject)
+                {
+                    if (puzzle.activeSelf == true)
+                    {
+                        puzzle.SetActive(false);
+                    }
+                    else
+                    {
+                        puzzle.SetActive(true);
+                    }
+                }
             }
             else
             {
                 isActive = true;
+                anim.SetBool("isActive", isActive);
+                foreach (GameObject puzzle in puzzleObject)
+                {
+                    if (puzzle.activeSelf == false)
+                    {
+                        puzzle.SetActive(true);
+                    }
+                    else
+                    {
+                        puzzle.SetActive(false);
+                    }
+                }
             }
 
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.gray;
+        foreach (GameObject puzzle in puzzleObject)
+        {
+            Gizmos.DrawLine(transform.position, puzzle.transform.position);
+
+        }
+        
     }
 }

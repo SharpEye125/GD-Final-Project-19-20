@@ -9,6 +9,10 @@ public class EnemyPlatormPatrol : MonoBehaviour
     public LayerMask groundLayers = 12;
     Animator anim;
 
+    float timer;
+    float turnAroundDelay = 0.1f;
+    bool canTurnAround;
+
     public bool startingRight;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +23,16 @@ public class EnemyPlatormPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canTurnAround)
+        {
+            timer += Time.deltaTime;
+        }
+        if (timer >= turnAroundDelay)
+        {
+            canTurnAround = true;
+            timer = 0;
+        }
+
         Vector3 velocity = GetComponent<Rigidbody2D>().velocity;
 
         velocity.x = moveDir * moveSpeed;
@@ -73,9 +87,10 @@ public class EnemyPlatormPatrol : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 12)
+        if (collision.gameObject.layer == 12 && canTurnAround == true)
         {
             TurnAround();
+            canTurnAround = false;
         }
     }
 }
