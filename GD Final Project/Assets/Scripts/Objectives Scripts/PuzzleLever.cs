@@ -16,6 +16,7 @@ public class PuzzleLever : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         player = FindObjectOfType<PlatformerMove>().transform;
+        anim.SetBool("isActive", isActive);
     }
 
     // Update is called once per frame
